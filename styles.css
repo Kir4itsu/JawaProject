@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lilita One", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+}
+
+/* Header container */
+.header-container {
+    background-color: #DAA520;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Logo in the top-left */
+.logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Profile section inside the header */
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: row; 
+    justify-content: flex-start; 
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.greeting {
+    text-align: left;
+    color: #333;
+}
+
+.greeting p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.greeting h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Subtitle text below the greeting */
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Search bar and button */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px 0 0 20px;
+    font-size: 1rem;
+}
+
+.search-button {
+    padding: 10px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Category grid */
+.category-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    flex-basis: 23%;
+    text-align: center;
+}
+
+.category-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+/* Recommendations grid */
+.recommendation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Agar item selalu di tengah */
+    align-items: center;     /* Vertikal tengah */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.recommendation-item {
+    width: 180px; /* Ukuran tetap untuk kotak rekomendasi */
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.recommendation-item img {
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    object-position: 20% 60%; /* Atur posisi gambar (center default) untuk lebih customize(angka% untuk horizontal angka% untuk vertical)*/
+    object-fit: cover; /* Pastikan gambar sesuai dengan ukuran tanpa distorsi */
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Footer section */
+footer {
+    background-color: #f9b233;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    flex: 1;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.project-status {
+    color: white;
+    margin-top: 10px;
+}
+
+/* Media Queries for different screen sizes */
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 768px) {
+    .category-grid {
+        justify-content: space-evenly;
+    }
+
+    .category-item {
+        flex-basis: 18%;
+    }
+
+    .recommendation-item {
+        flex-basis: 22%;
+    }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (max-width: 768px) {
+    .category-grid {
+        justify-content: space-around;
+    }
+
+    .category-item {
+        flex-basis: 45%;
+    }
+
+    .recommendation-item {
+        flex-basis: 48%;
+    }
+}
+
+/* Small devices (mobile phones) */
+@media only screen and (max-width: 220px) {
+    .category-item {
+        flex-basis: 48%;
+    }
+
+    .recommendation-item {
+        flex-basis: 100%;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        border-radius: 20px;
+        width: 100%;
+    }
+    
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.category-container {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+
+.category-title {
+    font-size: 18px;
+    /*font-weight: bold;*/
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.category-text {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.category-box {
+    width: 100px; /* Ukuran box kategori */
+    height: 100px; /* Pastikan box menyesuaikan tinggi konten */
+    display: flex;
+    flex-direction: column; /* Atur konten secara vertikal */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #DA951C;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.category-box img {
+    width: 50px; /* Ukuran gambar di dalam kategori */
+    height: 50px;
+    object-fit: cover;
+}
+
+.category-box p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    margin-top: 5px;
+    position: absolute; /* Agar teks berada di luar kotak */
+    bottom: -25px; /* Geser teks ke bawah kotak */
+    left: 50%;
+    transform: translateX(-50%); /* Agar teks berada di tengah */
+}
+
+/* Spesifik untuk teks "Jasa Lainnya" agar lebih jauh dari kotaknya */
+.category-box:last-child p {
+    bottom: -35px; /* Geser teks Jasa Lainnya lebih jauh ke bawah */
+}
+
+.category-box:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.recommendation-item img {
+    width: 280px; /* Sesuaikan lebar*/
+    height: 170px; /* Sesuaikan tinggi*/
+    object-fit: cover; /* Pastikan gambar sesuai tanpa melar */
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
