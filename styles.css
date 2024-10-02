@@ -124,6 +124,7 @@ body {
     justify-content: flex-start;
     gap: 20px;
     margin-top: 20px;
+    transition: transform 0.5s ease;
 }
 
 .recommendation-item {
@@ -135,15 +136,23 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: flex;
+    display: none;
+    flex: 0 0 100%; /* Hanya satu item per slide */
     flex-direction: column;
     padding: 10px;
+}
+
+.recommendation-item.active {
+    display: flex; /* Tampilkan item yang aktif */
+    transform: scale(1.05); /* Sedikit memperbesar item aktif untuk menonjolkan */
+    transition: transform 0.3s ease; /* Transisi halus saat memperbesar */
 }
 
 .recommendation-image {
     width: 100%;
     height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
-    padding-bottom: 60%; /* Aspect ratio 5:3 */
+    aspect-ratio: 16 / 9;
+    padding-bottom: 56.25%;
     background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
     background-position: center; /* Menjaga gambar tetap di tengah */
     background-repeat: no-repeat; /* Hindari pengulangan gambar */
@@ -171,6 +180,13 @@ body {
     overflow: hidden;
     text-overflow: ellipsis; /* Potong teks yang terlalu panjang dengan elipsis */
 }
+
+.recommendation-slider {
+    width: 100%; /* Lebar penuh */
+    max-width: 600px; /* Maksimum lebar slider */
+    margin: auto; /* Tengah-kan slider */
+}
+
 
 /* Mengatur hover-content agar lebih besar dan mencakup teks panjang */
 .hover-content {
@@ -287,6 +303,10 @@ footer {
         flex-basis: 18%;
     }
     
+    .recommendation-item {
+        flex: 0 0 100%; /* Untuk desktop: empat item per slide */
+    }
+
     .recommendation-grid {
         justify-content: center; /* Untuk layar kecil, tengahkan item */
     }
@@ -313,6 +333,11 @@ footer {
         flex-basis: 45%;
     }
 
+    
+    .recommendation-item {
+        flex: 0 0 50%; /* Untuk tablet: dua item per slide */
+    }
+
     .recommendation-item {
         flex-basis: 48%;
     }
@@ -331,10 +356,6 @@ footer {
 @media only screen and (max-width: 220px) {
     .category-item {
         flex-basis: 48%;
-    }
-
-    .recommendation-item {
-        flex-basis: 100%;
     }
 
     .profile-info {
