@@ -127,24 +127,49 @@ body {
 }
 
 .recommendation-item {
-    width: calc(50% - 10px);
-    max-width: 280px;
+    width: calc(50% - 10px); /* Lebar default untuk 2 item per baris */
+    max-width: 280px; /* Maksimum lebar item */
+    height: auto;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
 .recommendation-image {
     width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 5px;
+    height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
+    padding-bottom: 60%; /* Aspect ratio 5:3 */
+    background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
+    background-position: center; /* Menjaga gambar tetap di tengah */
+    background-repeat: no-repeat; /* Hindari pengulangan gambar */
+    border-radius: 5px; /* Tambahkan radius border agar tidak kaku */
     position: relative;
+    overflow: hidden;
+}
+
+
+.recommendation-item img {
+    width: 120px; /* Lebar tetap 120px */
+    height: 40px; /* Tinggi tetap 40px */
+    object-fit: cover; /* Tidak mengubah ukuran gambar */
+    object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
+    border-radius: 5px; /* Opsional: sudut bulat */
+    margin-bottom: 5px;
+}
+
+.recommendation-text {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    white-space: nowrap; /* Agar teks tidak terpotong */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Potong teks yang terlalu panjang dengan elipsis */
 }
 
 /* Mengatur hover-content agar lebih besar dan mencakup teks panjang */
