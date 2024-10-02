@@ -9,6 +9,8 @@ body {
     background-color: #f5f5f5;
     color: #333;
     padding: 10px;
+    padding-bottom: 70px; /* Beri ruang untuk bottom nav */
+    /* Jika tinggi bottom nav Anda berbeda, sesuaikan padding di sini */
 }
 
 /* Header container */
@@ -118,13 +120,14 @@ body {
 .recommendation-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     margin-top: 20px;
 }
 
 .recommendation-item {
-    width: 280px; /* Ukuran tetap untuk kotak rekomendasi */
+    width: calc(50% - 10px); /* Lebar default untuk 2 item per baris */
+    max-width: 280px; /* Maksimum lebar item */
     height: auto;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -152,7 +155,7 @@ body {
 .recommendation-item img {
     width: 120px; /* Lebar tetap 120px */
     height: 40px; /* Tinggi tetap 40px */
-    object-fit: none; /* Tidak mengubah ukuran gambar */
+    object-fit: cover; /* Tidak mengubah ukuran gambar */
     object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
     border-radius: 5px; /* Opsional: sudut bulat */
     margin-bottom: 5px;
@@ -162,28 +165,39 @@ body {
     font-size: 1rem;
     padding: 10px;
     margin-top: 10px;
+    text-align: center;
     white-space: nowrap; /* Agar teks tidak terpotong */
     overflow: hidden;
     text-overflow: ellipsis; /* Potong teks yang terlalu panjang dengan elipsis */
 }
 
-/* Footer section */
+/* Footer section 
 footer {
     background-color: #f9b233;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     margin-top: 20px;
-}
+}*/
 
 /* Bottom navigation */
 .bottom-nav {
-    display: flex;
-    justify-content: space-between;
+    position: fixed; /* Tetapkan posisi tetap */
+    bottom: 0; /* Posisikan di bagian bawah layar */
+    left: 0; /* Posisikan dari kiri */
+    right: 0; /* Posisikan sampai kanan */
+    background-color: #DAA520; /* Warna latar belakang navigasi */
+    display: flex; /* Gunakan flexbox untuk item navigasi */
+    justify-content: space-between; /* Sebar item dengan rata */
+    padding: 10px; /* Tambahkan padding jika perlu */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek visual */
+    z-index: 1000; /* Pastikan tetap di atas konten lainnya */
+    border-radius: 10px;
 }
 
+
 .nav-item {
-    color: white;
+    color: #505050;
     text-align: center;
     text-decoration: none;
     flex: 1;
@@ -212,9 +226,13 @@ footer {
     .category-item {
         flex-basis: 18%;
     }
-
+    
+    .recommendation-grid {
+        justify-content: center; /* Untuk layar kecil, tengahkan item */
+    }
     .recommendation-item {
-        flex-basis: 22%;
+        width: calc(50% - 10px); /* 2 item per baris */
+        max-width: 280px;
     }
 
     .recommendation-item img {
@@ -237,6 +255,14 @@ footer {
 
     .recommendation-item {
         flex-basis: 48%;
+    }
+
+    .recommendation-grid {
+        justify-content: center; /* Untuk layar kecil, tengahkan item */
+    }
+    .recommendation-item {
+        width: 100%;
+        max-width: 280px;
     }
 
     .recommendation-item img {
@@ -264,6 +290,14 @@ footer {
 
     .search-bar-container {
         flex-direction: column;
+    }
+
+    .recommendation-grid {
+        justify-content: center; /* Untuk layar kecil, tengahkan item */
+    }
+    .recommendation-item {
+        width: 100%;
+        max-width: 280px;
     }
 
     .search-bar {
