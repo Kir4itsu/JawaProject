@@ -77,6 +77,7 @@ body {
 }
 
 .search-bar {
+    font-family: "Lilita One", sans-serif;
     flex: 1;
     padding: 10px;
     border: none;
@@ -126,50 +127,65 @@ body {
 }
 
 .recommendation-item {
-    width: calc(50% - 10px); /* Lebar default untuk 2 item per baris */
-    max-width: 280px; /* Maksimum lebar item */
-    height: auto;
+    width: calc(50% - 10px);
+    max-width: 280px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    position: relative;
 }
 
 .recommendation-image {
     width: 100%;
-    height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
-    padding-bottom: 60%; /* Aspect ratio 5:3 */
-    background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
-    background-position: center; /* Menjaga gambar tetap di tengah */
-    background-repeat: no-repeat; /* Hindari pengulangan gambar */
-    border-radius: 5px; /* Tambahkan radius border agar tidak kaku */
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
     position: relative;
-    overflow: hidden;
 }
 
-
-.recommendation-item img {
-    width: 120px; /* Lebar tetap 120px */
-    height: 40px; /* Tinggi tetap 40px */
-    object-fit: cover; /* Tidak mengubah ukuran gambar */
-    object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
-    border-radius: 5px; /* Opsional: sudut bulat */
-    margin-bottom: 5px;
+/* Mengatur hover-content agar lebih besar dan mencakup teks panjang */
+.hover-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Background lebih gelap */
+    color: white;
+    padding: 20px;
+    text-align: left; /* Mengubah menjadi rata kiri */
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 2;
+    overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
 }
 
-.recommendation-text {
-    font-size: 1rem;
-    padding: 10px;
-    margin-top: 10px;
-    text-align: center;
-    white-space: nowrap; /* Agar teks tidak terpotong */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Potong teks yang terlalu panjang dengan elipsis */
+/* Gaya gambar dalam hover content */
+.hover-content img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
+
+/* Gaya untuk paragraf dalam hover-content */
+.hover-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 10px 0 0 0;
+}
+
+/* Menampilkan hover-content saat item di-hover */
+.recommendation-item:hover .hover-content {
+    display: flex;
+}
+
 
 /* Footer section 
 footer {
