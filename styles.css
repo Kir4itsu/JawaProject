@@ -146,7 +146,7 @@ body {
     background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
     background-position: center; /* Menjaga gambar tetap di tengah */
     background-repeat: no-repeat; /* Hindari pengulangan gambar */
-    border-radius: 5px; /* Tambahkan radius jika diinginkan */
+    border-radius: 5px; /* Tambahkan radius border agar tidak kaku */
     position: relative;
     overflow: hidden;
 }
@@ -387,11 +387,68 @@ footer {
     transform: scale(1.05); /* Efek zoom saat hover */
 }
 
-.recommendation-item img {
-    width: 280px; /* Sesuaikan lebar*/
-    height: 170px; /* Sesuaikan tinggi*/
-    object-fit: cover; /* Pastikan gambar sesuai tanpa melar */
-    border-radius: 5px;
-    margin-bottom: 5px;
+.floating-button {
+    position: fixed;  /* Agar tombol tetap berada di posisi tetap */
+    bottom: 90px;     /* Jarak dari bawah layar */
+    right: 20px;      /* Jarak dari kanan layar */
+    width: 60px;      /* Ukuran tombol */
+    height: 60px;     /* Ukuran tombol */
+    background-color: #DAA520; /* Warna background tombol */
+    color: #505050;     /* Warna teks */
+    border-radius: 50%;  /* Membuat tombol menjadi bulat */
+    display: flex;    /* Flex untuk sentralisasi */
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;  /* Ukuran teks + */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+    cursor: pointer;  /* Menjadikan tombol interaktif */
+    text-decoration: none;  /* Menghilangkan garis bawah pada link */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek hover */
+.floating-button:hover {
+    background-color: #F57C00; /* Warna lebih gelap saat hover */
+    transform: scale(1.1);     /* Efek pembesaran */
+}
+
+
+.runningproject-title {
+    font-size: auto;  /* Ukuran teks */
+  /*font-weight: bold;   Membuat teks tebal */
+    margin-top: 20px;  /* Menambahkan jarak dari elemen di atasnya */
+    text-align: left;  /* Menyelaraskan teks ke tengah, opsional */
+    color: #333;  /* Warna teks */
+}
+
+/* Gambar Sad Proyek Berjalan */
+.runningproject-status {
+    display: flex;
+    flex-direction: column;  /* Mengatur konten secara vertikal */
+    justify-content: center;  /* Menempatkan konten di tengah secara vertikal */
+    align-items: center;  /* Menempatkan konten di tengah secara horizontal */
+    height: 90%;  /* Ketinggian menyesuaikan konten */
+}
+
+.custom-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;  /* Memberikan jarak antara gambar dan teks */
+}
+
+
+
+.runningproject-grid {
+    width: 100%;  /* Sesuaikan lebar box */
+    height: 150px;
+    padding: 20px;
+    background-color: #DEDEDE;  /* Warna latar belakang */
+    border: 2px solid #ccc;  /* Warna dan ketebalan border */
+    border-radius: 10px;  /* Membuat sudut border melengkung */
+    text-align: center;  /* Menempatkan teks di tengah */
+    font-size: 18px;  /* Ukuran font */
+    color: #333;  /* Warna teks */
+    margin-top: 5px;  /* Jarak dari elemen atas */
 }
 
