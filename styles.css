@@ -195,8 +195,27 @@ footer {
     border-radius: 10px;
 }
 
+.moon-effect {
+    position: absolute; /* Posisi absolut agar bisa diletakkan di belakang elemen lain */
+    top: -20px; /* Posisikan di atas elemen nav-item */
+    left: 49.5%; /* Pusatkan secara horizontal */
+    transform: translateX(-50%); /* Pusatkan secara horizontal */
+    width: 60px; /* Atur lebar bulan */
+    height: 60px; /* Atur tinggi bulan */
+    background-color: rgba(255, 255, 255, 0.7); /* Warna bulan dengan transparansi */
+    border-radius: 50%; /* Membuat bulan menjadi bulat */
+    z-index: -1; /* Pastikan berada di belakang elemen nav-item */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek cahaya bulan */
+    transition: all 0.3s ease; /* Transisi halus */
+}
+
+.nav-item.active .moon-effect {
+    background-color: #fabe26; /* Warna bulan saat dipilih */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Cahaya bulan lebih jelas saat dipilih */
+}
 
 .nav-item {
+    position: relative; /* Posisi relatif untuk menempatkan elemen bulan */
     color: #505050;
     text-align: center;
     text-decoration: none;
@@ -432,7 +451,6 @@ footer {
 }
 
 
-
 .runningproject-grid {
     width: 100%;  /* Sesuaikan lebar box */
     height: 150px;
@@ -446,3 +464,39 @@ footer {
     margin-top: 5px;  /* Jarak dari elemen atas */
 }
 
+/* Form.HTML */
+.projectform-title{
+    font-size: auto;  /* Ukuran teks */
+    /*font-weight: bold;   Membuat teks tebal */
+    margin-top: 20px;  /* Menambahkan jarak dari elemen di atasnya */
+    text-align: left;  /* Menyelaraskan teks ke tengah, opsional */
+    color: #333;  /* Warna teks */
+}
+
+.projectform-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #50505077; /* Warna latar belakang box */
+    padding: 20px; /* Padding untuk ruang di dalam box */
+    border-radius: 5px; /* Membuat sudut kotak menjadi bulat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk memberikan efek kedalaman */
+    width: 100%; /* Agar box menyesuaikan dengan lebar kontainer */
+}
+
+.projectform-Text {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
