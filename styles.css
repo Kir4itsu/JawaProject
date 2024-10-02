@@ -62,7 +62,7 @@ body {
 /* Subtitle text below the greeting */
 .subtitle {
     font-size: 1.2rem;
-    margin-top: 5px;
+    margin-top: 25px;
     color: #333;
 }
 
@@ -265,12 +265,6 @@ footer {
         max-width: 280px;
     }
 
-    .recommendation-item img {
-        width: 100%; /* Tetap responsif di layar kecil */
-        height: auto;
-        object-fit: cover;
-        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
-    }
 }
 
 /* Small devices (mobile phones) */
