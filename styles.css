@@ -147,13 +147,13 @@ body {
 
 
 .recommendation-item img {
-    width: 120px; /* Lebar tetap 120px */
-    height: 40px; /* Tinggi tetap 40px */
-    object-fit: none; /* Tidak mengubah ukuran gambar */
-    object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
-    border-radius: 5px; /* Opsional: sudut bulat */
+    width: 100%; /* Mengatur lebar 100% agar responsif */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border-radius: 5px; /* Menjaga sudut bulat */
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa merusak proporsi */
     margin-bottom: 5px;
 }
+
 
 .recommendation-text {
     font-size: 1rem;
@@ -210,15 +210,14 @@ footer {
     }
 
     .recommendation-item {
-        flex-basis: 22%;
+        width: 100%; /* Atur lebar penuh pada perangkat kecil */
+    }
+    .recommendation-item img {
+        width: 100%; /* Gambar akan mengisi lebar 100% dari container */
+        height: auto; /* Menjaga rasio aspek */
+        border-radius: 5px; /* Menjaga sudut bulat */
     }
 
-    .recommendation-item img {
-        width: 100%; /* Tetap responsif di layar kecil */
-        height: auto;
-        object-fit: cover;
-        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
-    }
 }
 
 /* Medium devices (tablets) */
