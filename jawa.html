@@ -19,10 +19,27 @@
     <div class="profile-info">
         <img class="profile-img" src="assets/img/Profile/HUFU.jpg" alt="Profile Image">
         <div class="greeting">
-            <p>Selamat Pagi,</p>
+            <p id="greeting-message">Selamat Pagi,</p>
             <h2>Kiraitsu Mochizuki</h2>
         </div>
     </div>
+    
+    <script>
+        // Mendapatkan elemen untuk menampilkan ucapan
+        var greetElem = document.getElementById("greeting-message");
+    
+        // Mendapatkan jam saat ini
+        var curHr = new Date().getHours();
+    
+        // Menentukan ucapan berdasarkan jam
+        if (curHr < 12) {
+            greetElem.innerHTML = "Selamat Pagi,";
+        } else if (curHr < 18) {
+            greetElem.innerHTML = "Selamat Siang,";
+        } else {
+            greetElem.innerHTML = "Selamat Malam,";
+        }
+    </script>
     <p class="subtitle">Ada yang bisa dibantu?</p>
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Cari Jasa">
