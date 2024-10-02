@@ -115,48 +115,52 @@ body {
     margin-bottom: 5px;
 }
 
-/* Recommendations grid */
 .recommendation-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Agar item selalu di tengah */
-    align-items: center;     /* Vertikal tengah */
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .recommendation-item {
-    width: 180px; /* Ukuran tetap untuk kotak rekomendasi */
+    width: 280px; /* Ukuran tetap untuk kotak rekomendasi */
     height: auto;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
 }
 
 .recommendation-image {
     width: 100%;
     height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
+    padding-bottom: 60%; /* Aspect ratio 5:3 */
     background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
     background-position: center; /* Menjaga gambar tetap di tengah */
     background-repeat: no-repeat; /* Hindari pengulangan gambar */
     border-radius: 5px; /* Tambahkan radius jika diinginkan */
+    position: relative;
+    overflow: hidden;
 }
 
 
 .recommendation-item img {
-    width: 100%; /* Mengatur lebar 100% agar responsif */
-    height: auto; /* Menjaga rasio aspek gambar */
-    border-radius: 5px; /* Menjaga sudut bulat */
-    object-fit: cover; /* Memastikan gambar mengisi area tanpa merusak proporsi */
+    width: 120px; /* Lebar tetap 120px */
+    height: 40px; /* Tinggi tetap 40px */
+    object-fit: none; /* Tidak mengubah ukuran gambar */
+    object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
+    border-radius: 5px; /* Opsional: sudut bulat */
     margin-bottom: 5px;
 }
 
-
 .recommendation-text {
     font-size: 1rem;
+    padding: 10px;
     margin-top: 10px;
     white-space: nowrap; /* Agar teks tidak terpotong */
     overflow: hidden;
@@ -210,14 +214,15 @@ footer {
     }
 
     .recommendation-item {
-        width: 100%; /* Atur lebar penuh pada perangkat kecil */
-    }
-    .recommendation-item img {
-        width: 100%; /* Gambar akan mengisi lebar 100% dari container */
-        height: auto; /* Menjaga rasio aspek */
-        border-radius: 5px; /* Menjaga sudut bulat */
+        flex-basis: 22%;
     }
 
+    .recommendation-item img {
+        width: 100%; /* Tetap responsif di layar kecil */
+        height: auto;
+        object-fit: cover;
+        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
+    }
 }
 
 /* Medium devices (tablets) */
