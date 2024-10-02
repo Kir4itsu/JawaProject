@@ -136,15 +136,31 @@ body {
     padding: 10px;
 }
 
+.recommendation-image {
+    width: 100%;
+    height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
+    background-size: cover; /* Memastikan gambar mengisi box secara proporsional */
+    background-position: center; /* Menjaga gambar tetap di tengah */
+    background-repeat: no-repeat; /* Hindari pengulangan gambar */
+    border-radius: 5px; /* Tambahkan radius jika diinginkan */
+}
+
+
 .recommendation-item img {
-    width: 180px;
-    border-radius: 5px;
+    width: 120px; /* Lebar tetap 120px */
+    height: 40px; /* Tinggi tetap 40px */
+    object-fit: none; /* Tidak mengubah ukuran gambar */
+    object-position: 20% 60%; /* Posisi gambar tetap 20% horizontal, 60% vertikal */
+    border-radius: 5px; /* Opsional: sudut bulat */
     margin-bottom: 5px;
-    object-fit: cover; /* Memastikan gambar tetap proporsional */
-    object-position: 20% 60%; /* Atur posisi gambar (center default) untuk lebih customize(angka% untuk horizontal angka% untuk vertical)*/
-    object-fit: cover; /* Pastikan gambar sesuai dengan ukuran tanpa distorsi */
-    border-radius: 5px;
-    margin-bottom: 5px;
+}
+
+.recommendation-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    white-space: nowrap; /* Agar teks tidak terpotong */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Potong teks yang terlalu panjang dengan elipsis */
 }
 
 /* Footer section */
@@ -196,6 +212,13 @@ footer {
     .recommendation-item {
         flex-basis: 22%;
     }
+
+    .recommendation-item img {
+        width: 100%; /* Tetap responsif di layar kecil */
+        height: auto;
+        object-fit: cover;
+        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
+    }
 }
 
 /* Medium devices (tablets) */
@@ -210,6 +233,13 @@ footer {
 
     .recommendation-item {
         flex-basis: 48%;
+    }
+
+    .recommendation-item img {
+        width: 100%; /* Tetap responsif di layar kecil */
+        height: auto;
+        object-fit: cover;
+        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
     }
 }
 
@@ -236,7 +266,12 @@ footer {
         border-radius: 20px;
         width: 100%;
     }
-    
+    .recommendation-item img {
+        width: 100%; /* Tetap responsif di layar kecil */
+        height: auto;
+        object-fit: cover;
+        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
+    }
 }
 
 .categories {
