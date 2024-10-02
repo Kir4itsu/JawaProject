@@ -140,6 +140,7 @@ body {
     flex: 0 0 100%; /* Hanya satu item per slide */
     flex-direction: column;
     padding: 10px;
+    position: relative;
 }
 
 .recommendation-item.active {
@@ -187,24 +188,60 @@ body {
     margin: auto; /* Tengah-kan slider */
 }
 
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: #ffffff;
+    padding: 20px;
+    text-align: left;
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: gold;
+    margin-right: 5px;
+}
+
+.score {
+    font-size: 14px;
+}
+
+.totalrate{
+    font-size: 14px;
+    margin-left: 6px;
+}
 
 /* Mengatur hover-content agar lebih besar dan mencakup teks panjang */
 .hover-content {
-    display: none;
-    position: absolute;
+    display: none; /* Sembunyikan konten hover secara default */
+    position: absolute; /* Posisi absolut untuk overlay */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.85); /* Background lebih gelap */
+    background-color: rgba(0, 0, 0, 0.85); /* Warna latar belakang gelap dengan transparansi */
     color: white;
     padding: 20px;
-    text-align: left; /* Mengubah menjadi rata kiri */
+    text-align: left; /* Rata kiri untuk teks */
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    z-index: 2;
-    overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
+    z-index: 2; /* Pastikan di atas elemen lainnya */
+    transition: all 0.3s ease; /* Transisi halus */
 }
 
 /* Gaya gambar dalam hover content */
@@ -336,6 +373,17 @@ footer {
     
     .recommendation-item {
         flex: 0 0 50%; /* Untuk tablet: dua item per slide */
+        width: 100%; /* Pastikan item menggunakan lebar penuh */
+        margin-bottom: 20px; /* Jarak antar item */
+    }
+
+    .hover-content {
+        padding: 10px; /* Kurangi padding untuk tampilan lebih kompak */
+    }
+
+    .hover-content img {
+        max-width: 100%; /* Pastikan gambar tidak melampaui lebar kontainer */
+        height: auto; /* Menjaga rasio aspek gambar */
     }
 
     .recommendation-item {
