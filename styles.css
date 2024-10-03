@@ -663,7 +663,7 @@ footer {
     flex-direction: column;
     align-items: left;
     margin-top: 10px;
-    background-color: #50505077; /* Warna latar belakang box */
+    background-color: #ebbd79; /* Warna latar belakang box */
     padding: 20px; /* Padding untuk ruang di dalam box */
     border-radius: 5px; /* Membuat sudut kotak menjadi bulat */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk memberikan efek kedalaman */
