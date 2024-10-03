@@ -14,6 +14,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    
 }
 
 .container {
@@ -122,6 +123,27 @@ h2 {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* Untuk layar yang lebih kecil, seperti ponsel */
+@media (max-width: 768px) {
+    .container {
+        display: flex; /* Tetap gunakan flexbox */
+        flex-direction: row; /* Pastikan tetap horizontal */
+        gap: 10px; /* Jarak antar elemen */
+        overflow-x: auto; /* Menambahkan scroll horizontal jika konten melebihi lebar layar */
+        padding-bottom: 10px; /* Sedikit padding di bawah untuk ruang scroll bar */
+        white-space: nowrap; /* Mencegah elemen-elemen turun ke baris berikutnya */
+    }
+
+    .form-container {
+        min-width: 250px; /* Set minimum lebar elemen agar tidak terlalu kecil */
+        flex-shrink: 0; /* Mencegah elemen menyusut agar tetap horizontal */
+    }
+
+    .right-arrow {
+        display: none; /* Sembunyikan gambar panah */
     }
 }
 
