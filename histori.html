@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Aktif & Histori</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to styles.css -->
+    <style>
+        body {
+            font-family: "Lilita One", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #f0a500;
+            color: #333;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .tabs {
+            display: flex;
+            background-color: #f0a500;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 10px;
+        }
+        .project-item, .history-item {
+            background-color: #D9D9D9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 15px;
+            position: relative;
+        }
+        .project-item::before, .history-item::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: #f0a500;
+            border-radius: 50%;
+        }
+        .project-item::after, .history-item::after {
+            content: '';
+            position: absolute;
+            left: -13px;
+            top: 50%;
+            bottom: -50%;
+            width: 2px;
+            background-color: #f0a500;
+        }
+        .project-item:last-child::after, .history-item:last-child::after {
+            display: none;
+        }
+        .project-title, .history-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .project-date, .history-date {
+            font-size: 0.9em;
+            color: #f0a500;
+        }
+        .status {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+        .status img {
+            width: 15px; /* Ukuran gambar */
+            height: 15px;
+            margin-right: 1px; /* Jarak antara gambar dan teks */
+            vertical-align: middle; /* Menyelaraskan gambar dengan teks */
+        }
+        .status-bar {
+            margin-top: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .status-progress {
+            height: 100%;
+            background-color: #829C49;
+        }
+        .status.completed {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .status.cancelled {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .completed {
+            color: #4CAF50;
+        }
+        .cancelled {
+            color: #FF6D6D;
+        }
+        .in-progress {
+            color: #2196F3;
+        }
+        #active-projects {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Proyek Aktif & Histori
+    </div>
+    <div class="tabs">
+        <div class="tab" onclick="showContent('active-projects')">Proyek Aktif</div>
+        <div class="tab active" onclick="showContent('project-history')">Histori</div>
+    </div>
+    <div id="active-projects" class="content">
+        <div class="project-item">
+            <div class="project-title">Pembuatan Kolam</div>
+            <div class="project-date">Mulai pada 11 September 2024 - 21 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 30%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+        <div class="project-item">
+            <div class="project-title">Pembuatan Kamar Mandi</div>
+            <div class="project-date">Mulai pada 5 September 2024 - 14 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 80%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+    </div>
+    <div id="project-history" class="content">
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 9 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 8 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 7 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 6 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 5 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 4 Agustus 2024</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            document.getElementById('active-projects').style.display = 'none';
+            document.getElementById('project-history').style.display = 'none';
+            document.getElementById(contentId).style.display = 'block';
+
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+    <!-- Navbar -->
+<footer>
+    <div class="bottom-nav">
+        <a href="jawa.html" class="nav-item">
+            
+            <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
+            <p>Home</p>
+        </a>
+        <a href="form.html" class="nav-item">
+            
+            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="Proyek">
+            <p>Buat Project</p>
+        </a>
+        <a href="histori.html" class="nav-item active"> <!-- Efek Bulat -->
+            <div class="moon-effect"></div> <!-- Elemen bulat -->
+            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
+            <p>History</p>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
+            <p>Profil</p>
+        </a>
+    </div>
+</footer>
+</body>
+</html>
