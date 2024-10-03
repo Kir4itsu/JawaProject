@@ -702,16 +702,14 @@ input[type="number"] {
 }
 
 #budget-amount {
-    flex-grow: 1; /* Buat input mengisi ruang yang tersedia */
-    padding-right: 10px; /* Tambahkan sedikit ruang antara input dan label */
-}
+    width: 340px; /* Atur lebar kolom jumlah budget */
+  }
 
 #budget-label {
-    padding-left: 10px; /* Tambahkan sedikit ruang di sebelah kiri label */
-    font-weight: bold;
+    padding-left: 10px;  /*  Tambahkan sedikit ruang di sebelah kiri label 
+  font-weight: bold;*/
     color: #555;
 }
-
 
 /* Mengatur gaya umum untuk dropdown */
 select {

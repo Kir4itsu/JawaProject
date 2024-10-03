@@ -85,9 +85,9 @@
             </div>
             
             <!-- Tambahkan elemen ini untuk menampilkan total budget -->
-            <div class="form-group">
-                <label for="total-budget">Total Biaya</label>
-                <p id="total-budget" style="font-weight: bold;">Rp. -</p>
+            <div class="form-group" style="margin-top: 20px;">
+                <label id="total-budget-label" for="total-budget">Total Biaya</label>
+                <p id="total-budget" style="color: #ffffff; font-size: 30px;">Rp. -</p>
             </div>
             
 
@@ -97,7 +97,7 @@
                 const budgetLabel = document.getElementById('budget-label');
 
                 if (budgetSystem === 'harian') {
-                    budgetLabel.textContent = '/ hari';
+                    budgetLabel.textContent = '/hari /orang';
                 } else if (budgetSystem === 'borongan') {
                     budgetLabel.textContent = '/ borongan';
                 } else {
