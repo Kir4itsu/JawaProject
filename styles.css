@@ -655,7 +655,7 @@ footer {
 .projectform-title{
     font-size: auto;  /* Ukuran teks */
     /*font-weight: bold;   Membuat teks tebal */
-    margin-top: 20px;  /* Menambahkan jarak dari elemen di atasnya */
+    margin-top: 10px;  /* Menambahkan jarak dari elemen di atasnya */
     text-align: left;  /* Menyelaraskan teks ke tengah, opsional */
     color: #333;  /* Warna teks */
 }

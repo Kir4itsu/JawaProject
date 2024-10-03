@@ -6,10 +6,38 @@
         <title>Kuli Jawa</title>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+            #splash-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #DAA520;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            #splash-logo {
+                width: 150px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            #splash-credit {
+                color: #505050;
+                font-family: "Lilita One", sans-serif;
+                font-size: 16px;
+            }
+        </style>
     </head>
     
     <body>
-
+        <div id="splash-screen">
+            <img src="assets/img/Icon/logo_icon.png" alt="Kuli Jawa Logo" id="splash-logo">
+            <p id="splash-credit">Made by Kiraitsu</p>
+        </div>
         <div class="header-container">
             <header>
             <div class="logo">
@@ -174,5 +202,10 @@
     </div>
 </footer>
         </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.display = 'none';
+            }, 3000);
+        </script>
     </body>
 </html>
