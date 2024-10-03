@@ -37,34 +37,48 @@
             border-top-right-radius: 10px;
         }
         .content {
-            background-color: #fff;
-            padding: 10px;
-        }
+    position: relative;
+    padding-left: 40px;
+    min-height: 50px; /* Pastikan minimal ada ruang untuk konten */
+}
+        /* Modified styles for timeline */
         .project-item, .history-item {
             background-color: #D9D9D9;
             margin: 10px 0;
-            padding: 15px;
+            margin-right: 20px;
+            padding: 15px 15px 15px 30px; /* Increased left padding */
             border-radius: 15px;
             position: relative;
         }
+        
+        /*dot timeline*/
         .project-item::before, .history-item::before {
             content: '';
             position: absolute;
-            left: -18px;
+            left: -25px; /* Sesuaikan posisi dot */
             top: 50%;
+            transform: translateY(-50%);
             width: 12px;
             height: 12px;
             background-color: #f0a500;
             border-radius: 50%;
+            z-index: 2;
         }
-        .project-item::after, .history-item::after {
+
+        #project-history::before, #active-projects::before {
             content: '';
             position: absolute;
-            left: -13px;
-            top: 50%;
-            bottom: -50%;
+            left: 20px;
+            /* Mulai dari item pertama */
+            top: calc(35px / 2);
+            /* Sesuaikan dengan tinggi konten */
+            height: calc(100% - 35px);
             width: 2px;
             background-color: #f0a500;
+        }
+
+        .project-item::after, .history-item::after {
+            display: none;
         }
         .project-item:last-child::after, .history-item:last-child::after {
             display: none;
