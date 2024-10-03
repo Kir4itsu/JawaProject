@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Form Kuli Jawa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="logo">
+                <img src="assets/img/Icon/logo_latin.jpg.png" alt="Logo Kuli Jawa">
+            </div>
+        </header>
+    </div>
+
+    <main class="project-form-page">
+        <h1 class="projectform-title">Form Project</h1>
+        <form class="projectform-grid">
+            <div class="form-group">
+                <label for="project-name" class="projectform-Text">Nama Proyek</label>
+                <input type="text" id="project-name" name="project-name" placeholder="Harap Tuliskan Judul Proyek Anda" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="project-joblist">Jenis Pekerjaan</label>
+                <select id="project-joblist" name="project-joblist" required>
+                    <option value="" selected disabled>Pilih Jenis Pekerjaan</option>
+                    <option value="konstruksi">Konstruksi</option>
+                    <option value="pemeliharaan">Pemeliharaan</option>
+                    <option value="rekonstruksi">Rekonstruksi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">Tanggal Mulai</label>
+                <input type="date" id="start-date" name="start-date" onchange="calculateTotal()" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="end-date">Tanggal Selesai</label>
+                <input type="date" id="end-date" name="end-date" onchange="calculateTotal()" required>
+            </div>
+
+            <div class="form-group">
+                <label for="project-description">Deskripsi Project</label>
+                <textarea id="project-description" name="project-description" placeholder="Jelaskan detail proyek Anda" required></textarea>
+            </div>
+
+            <!-- Work Category -->
+            <div class="form-group">
+                <label for="work-category">Kategori Tenaga Kerja</label>
+                <select id="work-category" name="work-category" required>
+                    <option value="" selected disabled>Pilih Kategori Tenaga Kerja</option>
+                    <option value="arsitek">Arsitek</option>
+                    <option value="tukang">Tukang</option>
+                    <option value="kuli">Kuli</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="labor-requirement">Kebutuhan Tenaga Kerja (Jumlah)</label>
+                <input type="number" id="labor-requirement" name="labor-requirement" placeholder="Masukkan Jumlah Tenaga yang Dibutuhkan" required>
+            </div>
+            
+            <!-- Budget System -->
+            <div class="form-group">
+                <label for="budget-system">Sistem Budget</label>
+                <select id="budget-system" name="budget-system" onchange="updateBudgetLabel(); calculateTotal();" required>
+                    <option value="" selected disabled>Pilih Sistem Budget</option>
+                    <option value="harian">Harian</option>
+                    <option value="borongan">Borongan</option>
+                </select>
+            </div>
+            
+            <!-- Budget Amount -->
+            <div class="form-group">
+                <label for="budget-amount">Jumlah Budget</label>
+                <div class="budget-input-container">
+                    <input type="number" id="budget-amount" name="budget-amount" placeholder="Masukkan Jumlah Budget Anda (Rp)" oninput="calculateTotal()" required>
+                    <span id="budget-label"></span>
+                </div>
+            </div>
+            
+            <!-- Tambahkan elemen ini untuk menampilkan total budget -->
+            <div class="form-group">
+                <label for="total-budget">Total Biaya</label>
+                <p id="total-budget" style="font-weight: bold;">Rp. -</p>
+            </div>
+            
+
+            <script>
+           function updateBudgetLabel() {
+                const budgetSystem = document.getElementById('budget-system').value;
+                const budgetLabel = document.getElementById('budget-label');
+
+                if (budgetSystem === 'harian') {
+                    budgetLabel.textContent = '/ hari';
+                } else if (budgetSystem === 'borongan') {
+                    budgetLabel.textContent = '/ borongan';
+                } else {
+                    budgetLabel.textContent = '';
+                }
+            }
+
+            function calculateTotal() {
+                const laborRequirement = parseInt(document.getElementById('labor-requirement').value);
+                const budgetAmount = parseInt(document.getElementById('budget-amount').value);
+                const budgetSystem = document.getElementById('budget-system').value;
+
+                let totalAmount = 0;
+
+                // Hitung jumlah hari berdasarkan tanggal mulai dan tanggal selesai
+                const startDate = new Date(document.getElementById('start-date').value);
+                const endDate = new Date(document.getElementById('end-date').value);
+
+                if (!isNaN(laborRequirement) && !isNaN(budgetAmount)) {
+                    if (budgetSystem === 'harian' && startDate && endDate) {
+                        const timeDiff = Math.abs(endDate - startDate);
+                        const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Hitung selisih dalam hari
+                        if (!isNaN(days)) {
+                            totalAmount = laborRequirement * budgetAmount * days;
+                        }
+                    } else if (budgetSystem === 'borongan') {
+                        totalAmount = laborRequirement * budgetAmount;
+                    }
+                }
+
+                // Tampilkan total di elemen yang sesuai
+                document.getElementById('total-budget').textContent = totalAmount.toLocaleString('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR'
+                });
+            }
+
+            </script>
+
+            <button type="submit">Kirim</button>
+        </form>
+        
+
+<!-- Navbar -->
+<footer>
+    <div class="bottom-nav">
+        <a href="jawa.html" class="nav-item">
+            <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
+            <p>Home</p>
+        </a>
+        <a href="form.html" class="nav-item">
+            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="Proyek">
+            <p>Buat Project</p>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
+            <p>History</p>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
+            <p>Profil</p>
+        </a>
+    </div>
+</footer>
+        </div>
+    </body>
+</html>
+
+
+ <!-- <div class="form-container">
+        <p class="projectform-title">Form Project</p>
+        <div class="projectform-grid">
+            <div class="projectform-Text">Nama Project</div>
+            <input type="text" id="project-name" name="project-name" required>
+            
+            <div class="projectform-Text">Deskripsi Project</div>
+            <textarea id="project-description" name="project-description" rows="4" required></textarea>
+
+            <div class="projectform-Text">Tanggal Mulai</div>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <div class="projectform-Text">Tanggal Selesai</div>
+            <input type="date" id="end-date" name="end-date" required>
+
+            <button type="submit">Kirim</button>
+        </div>
+    </div> -->
+
+
+
+    <!-- Input untuk jumlah hari (tampil jika harian dipilih) 
+            <div class="form-group" id="days-container" style="display: none;">
+                <label for="days">Jumlah Hari</label>
+                <input type="number" id="days" name="days" placeholder="Masukkan Jumlah Hari" oninput="calculateTotal()">
+            </div>-->

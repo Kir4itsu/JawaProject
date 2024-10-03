@@ -687,6 +687,32 @@ textarea {
     border-radius: 15px;
 }
 
+input[type="number"] {
+    font-family: "Lilita One", sans-serif;
+    width: 100%; /* Membuat lebar input sesuai dengan elemen lain */
+    padding: 10px; /* Padding agar terlihat seragam */
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Radius agar bentuknya sama dengan input lain */
+    box-sizing: border-box; /* Agar ukuran padding dan border dihitung dalam total lebar */
+}
+
+.budget-input-container {
+    display: flex;
+    align-items: center;
+}
+
+#budget-amount {
+    flex-grow: 1; /* Buat input mengisi ruang yang tersedia */
+    padding-right: 10px; /* Tambahkan sedikit ruang antara input dan label */
+}
+
+#budget-label {
+    padding-left: 10px; /* Tambahkan sedikit ruang di sebelah kiri label */
+    font-weight: bold;
+    color: #555;
+}
+
+
 /* Mengatur gaya umum untuk dropdown */
 select {
     font-family: "Lilita One", sans-serif;
@@ -710,6 +736,7 @@ select:focus {
 
 /* Gaya untuk tombol submit */
 button[type="submit"] {
+    font-family: "Lilita One", sans-serif;
     width: 90px; /* Lebar tombol */
     height: 40px; /* Tinggi tombol */
     margin-top: 20px;

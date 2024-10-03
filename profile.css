@@ -54,6 +54,7 @@ h1 {
 
 .profile-name {
     font-size: 22px;
+    color: #ffffff;
     font-weight: bold;
     margin-bottom: 5px;
     position: relative; /* Agar berada di atas pseudo-element */
@@ -61,8 +62,11 @@ h1 {
 }
 .profile-mail {
     font-size: 16px;
-    color: #505050;
+    border: #505050;
+    color: #ffffff;
     margin-bottom: 10px;
+    position: relative; /* Agar berada di atas pseudo-element */
+    z-index: 1; /* Menempatkan di atas blur */
 }
 .menu-item {
     background-color: #ebbd79;
@@ -87,7 +91,7 @@ h1 {
     font-family: "Lilita One", sans-serif;
     background-color: #DAA520;
     color: #505050;
-    border: none;
+    border: none; /* Tidak perlu border pada <a> */
     border-radius: 10px;
     padding: 15px;
     width: 100%;
@@ -98,6 +102,7 @@ h1 {
     display: flex; /* Menggunakan flexbox untuk menyusun ikon dan teks */
     align-items: center; /* Menyelaraskan item secara vertikal */
     justify-content: center; /* Menyelaraskan item secara horizontal */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
 }
 
 .exit-button img {
@@ -109,6 +114,7 @@ h1 {
 .exit-button:hover {
     background-color: #f7bd2a;
 }
+
 
 /* Bottom navigation */
 .bottom-nav {
