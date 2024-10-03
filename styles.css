@@ -336,10 +336,85 @@ footer {
         justify-content: space-evenly;
     }
 
+    .category-box {
+        width: 120px; /* Larger size for desktop */
+        height: 120px;
+    }
+
+    .category-box img {
+        width: 60px; /* Larger image for desktop */
+        height: 60px;
+    }
+
+    .category-box p {
+        font-size: 16px; /* Larger font for desktop */
+        bottom: -30px;
+    }
+
+    /* Adjust the last category box (Jasa Lainnya) */
+    .category-box:last-child p {
+        bottom: -40px;
+    }
+
     .category-item {
         flex-basis: 18%;
     }
     
+    .categories {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    .category-container {
+        display: flex;
+        font-size: 18px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+    
+    .category-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .category-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #DA951C;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        position: relative;
+    }
+    
+    .category-box img {
+        object-fit: cover;
+    }
+    
+    .category-box p {
+        color: #333;
+        margin: 0;
+        text-align: center;
+        margin-top: 5px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .category-box:hover {
+        transform: scale(1.05);
+    }
+
     .recommendation-item {
         flex: 0 0 100%; /* Untuk desktop: empat item per slide */
     }
@@ -484,19 +559,19 @@ footer {
 }
 
 .category-box img {
-    width: 50px; /* Ukuran gambar di dalam kategori */
-    height: 50px;
+    width: 40px; /* Ukuran gambar di dalam kategori */
+    height: 40px;
     object-fit: cover;
 }
 
 .category-box p {
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
     margin: 0;
     text-align: center;
     margin-top: 5px;
     position: absolute; /* Agar teks berada di luar kotak */
-    bottom: -25px; /* Geser teks ke bawah kotak */
+    bottom: -20px; /* Geser teks ke bawah kotak */
     left: 50%;
     transform: translateX(-50%); /* Agar teks berada di tengah */
 }
@@ -586,7 +661,7 @@ footer {
 .projectform-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     margin-top: 10px;
     background-color: #50505077; /* Warna latar belakang box */
     padding: 20px; /* Padding untuk ruang di dalam box */
@@ -597,7 +672,7 @@ footer {
 
 .projectform-Text {
     margin-bottom: 5px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: #555;
     text-align: left;
 }
@@ -605,8 +680,58 @@ footer {
 input[type="text"],
 input[type="date"],
 textarea {
+    font-family: "Lilita One", sans-serif;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
+}
+
+/* Mengatur gaya umum untuk dropdown */
+select {
+    font-family: "Lilita One", sans-serif;
+    appearance: none; /* Menghapus tampilan default dari browser */
+    width: 100%; /* Mengatur lebar dropdown agar sesuai dengan kontainer */
+    padding: 10px; /* Menambahkan padding di dalam dropdown */
+    border: 2px solid #ccc; /* Mengatur warna border */
+    border-radius: 15px; /* Membuat sudut dropdown menjadi bulat */
+    background-color: #f8f9fa; /* Mengatur warna latar belakang */
+    color: #505050; /* Mengatur warna teks */
+    font-size: 14px; /* Mengatur ukuran font */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+
+/* Gaya saat dropdown dalam keadaan fokus */
+select:focus {
+    outline: none; /* Menghapus outline default saat fokus */
+    border-color: #DAA520; /* Mengubah warna border saat fokus */
+}
+
+
+/* Gaya untuk tombol submit */
+button[type="submit"] {
+    width: 90px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    margin-top: 20px;
+    background-color: #DAA520; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border default */
+    border-radius: 15px; /* Sudut melengkung */
+    padding: 5px 10px; /* Padding di dalam tombol (lebih kecil) */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color 0.3s ease; /* Transisi saat hover */
+    align-self: flex-end; /* Memindahkan tombol ke pojok kanan */
+}
+
+/* Gaya saat tombol di-hover */
+button[type="submit"]:hover {
+    background-color: #f5b616; /* Warna latar belakang saat hover */
+}
+
+/* Gaya saat tombol ditekan */
+button[type="submit"]:active {
+    background-color: #ffb700; /* Warna latar belakang saat ditekan */
+    box-shadow: 0 5px #666; /* Bayangan saat ditekan */
+    transform: translateY(4px); /* Efek menggerakkan tombol ke bawah */
 }

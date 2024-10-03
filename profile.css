@@ -1,0 +1,160 @@
+body {
+    font-family: "Lilita One", sans-serif;
+    background-color: #F5E6D3; /* Warna krem lembut */
+    color: #505050; /* Warna coklat tua */
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #FFF9E6; /* Warna krem lebih terang */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #505050; /* Warna coklat kemerahan */
+}
+.profile-card {
+    position: relative; /* Pastikan posisi relatif untuk pseudo-element */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #505050;
+    overflow: hidden; /* Menyembunyikan bagian yang melampaui sudut bulat */
+}
+
+.profile-card::before {
+    content: ""; /* Membuat pseudo-element */
+    position: absolute; /* Posisi absolut untuk menutupi seluruh card */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/img/Profile/HUFU.jpg'); /* Gambar latar belakang */
+    background-size: cover; /* Mengatur gambar latar belakang agar memenuhi area card */
+    background-position: center; /* Memusatkan gambar latar belakang */
+    filter: blur(2px); /* Menambahkan efek blur */
+    z-index: 0; /* Menempatkan di belakang konten lainnya */
+}
+
+.profile-image {
+    width: 100px; /* Atur ukuran gambar profil sesuai kebutuhan */
+    height: 100px; /* Atur ukuran gambar profil sesuai kebutuhan */
+    border-radius: 50%; /* Membuat gambar profil menjadi bulat */
+    border: 2px solid white; /* Menambahkan border putih di sekitar gambar profil */
+    position: relative; /* Agar berada di atas pseudo-element */
+    z-index: 1; /* Menempatkan di atas blur */
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: relative; /* Agar berada di atas pseudo-element */
+    z-index: 1; /* Menempatkan di atas blur */
+}
+.profile-mail {
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 10px;
+}
+.menu-item {
+    background-color: #ebbd79;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.menu-item:hover {
+    background-color: #f89c46;
+}
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    fill: #505050;
+}
+.exit-button {
+    font-family: "Lilita One", sans-serif;
+    background-color: #DAA520;
+    color: #505050;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    display: flex; /* Menggunakan flexbox untuk menyusun ikon dan teks */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    justify-content: center; /* Menyelaraskan item secara horizontal */
+}
+
+.exit-button img {
+    width: 24px; /* Atur lebar ikon */
+    height: 24px; /* Atur tinggi ikon */
+    margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
+}
+
+.exit-button:hover {
+    background-color: #f7bd2a;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+position: fixed; /* Tetapkan posisi tetap */
+bottom: 0; /* Posisikan di bagian bawah layar */
+left: 0; /* Posisikan dari kiri */
+right: 0; /* Posisikan sampai kanan */
+background-color: #DAA520; /* Warna latar belakang navigasi */
+display: flex; /* Gunakan flexbox untuk item navigasi */
+justify-content: space-between; /* Sebar item dengan rata */
+padding: 10px; /* Tambahkan padding jika perlu */
+box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek visual */
+z-index: 1000; /* Pastikan tetap di atas konten lainnya */
+border-radius: 10px;
+}
+
+.moon-effect {
+position: absolute; /* Posisi absolut agar bisa diletakkan di belakang elemen lain */
+top: -20px; /* Posisikan di atas elemen nav-item */
+left: 350%; /* Pusatkan secara horizontal */
+transform: translateX(-50%); /* Pusatkan secara horizontal */
+width: 60px; /* Atur lebar bulan */
+height: 60px; /* Atur tinggi bulan */
+background-color: rgba(255, 255, 255, 0.7); /* Warna bulan dengan transparansi */
+border-radius: 50%; /* Membuat bulan menjadi bulat */
+z-index: -1; /* Pastikan berada di belakang elemen nav-item */
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek cahaya bulan */
+transition: all 0.3s ease; /* Transisi halus */
+}
+
+.nav-item.active .moon-effect {
+background-color: #fabe26; /* Warna bulan saat dipilih */
+box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Cahaya bulan lebih jelas saat dipilih */
+}
+
+.nav-item {
+position: relative; /* Posisi relatif untuk menempatkan elemen bulan */
+color: #505050;
+text-align: center;
+text-decoration: none;
+flex: 1;
+}
+
+.nav-item img {
+width: 24px;
+height: 24px;
+display: block;
+margin: 0 auto 5px;
+}
