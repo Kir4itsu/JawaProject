@@ -19,6 +19,17 @@ h1 {
     margin-bottom: 20px;
     color: #505050; /* Warna coklat kemerahan */
 }
+
+.text {
+    font-family: "Lilita One", sans-serif; /* Set font family */
+    font-size: 16px; /* Set the font size */
+    color: #505050; /* Text color */
+    line-height: 1.6; /* Line height for better readability */
+    text-align: justify; /* Justified text */
+    margin: 0px 0; /* Margin for spacing above and below the paragraph */
+    padding: 0; /* Padding inside the text (optional) */
+}
+
 .profile-card {
     position: relative; /* Pastikan posisi relatif untuk pseudo-element */
     border-radius: 15px;
@@ -113,54 +124,4 @@ h1 {
 
 .exit-button:hover {
     background-color: #f7bd2a;
-}
-
-
-/* Bottom navigation */
-.bottom-nav {
-position: fixed; /* Tetapkan posisi tetap */
-bottom: 0; /* Posisikan di bagian bawah layar */
-left: 0; /* Posisikan dari kiri */
-right: 0; /* Posisikan sampai kanan */
-background-color: #DAA520; /* Warna latar belakang navigasi */
-display: flex; /* Gunakan flexbox untuk item navigasi */
-justify-content: space-between; /* Sebar item dengan rata */
-padding: 10px; /* Tambahkan padding jika perlu */
-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek visual */
-z-index: 1000; /* Pastikan tetap di atas konten lainnya */
-border-radius: 10px;
-}
-
-.moon-effect {
-position: absolute; /* Posisi absolut agar bisa diletakkan di belakang elemen lain */
-top: -20px; /* Posisikan di atas elemen nav-item */
-left: 350%; /* Pusatkan secara horizontal */
-transform: translateX(-50%); /* Pusatkan secara horizontal */
-width: 60px; /* Atur lebar bulan */
-height: 60px; /* Atur tinggi bulan */
-background-color: rgba(255, 255, 255, 0.7); /* Warna bulan dengan transparansi */
-border-radius: 50%; /* Membuat bulan menjadi bulat */
-z-index: -1; /* Pastikan berada di belakang elemen nav-item */
-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek cahaya bulan */
-transition: all 0.3s ease; /* Transisi halus */
-}
-
-.nav-item.active .moon-effect {
-background-color: #fabe26; /* Warna bulan saat dipilih */
-box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Cahaya bulan lebih jelas saat dipilih */
-}
-
-.nav-item {
-position: relative; /* Posisi relatif untuk menempatkan elemen bulan */
-color: #505050;
-text-align: center;
-text-decoration: none;
-flex: 1;
-}
-
-.nav-item img {
-width: 24px;
-height: 24px;
-display: block;
-margin: 0 auto 5px;
 }

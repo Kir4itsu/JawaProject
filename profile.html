@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kuli Jawa</title>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="profile.css">
+        <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to styles.css -->
+        <link rel="stylesheet" type="text/css" href="profile.css"> <!-- Link to profile.css -->
     </head>
 <body>
     <div class="container">
@@ -16,21 +17,21 @@
             <div class="profile-mail">kir.acount@gmail.com</div>
         </div>
         <div class="menu-item">
-            Edit Profil
+            <p class="text">Edit Profil</p>
             <img src="assets/img/Icon/pencil-svgrepo-com.png" alt="Ikon Pengaturan Akun" class="menu-icon">
             <!-- <svg class="menu-icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> -->
         </div>
         <div class="menu-item">
-            Pengaturan Akun
+            <p class="text">Pengaturan Akun</p>
             <img src="assets/img/Icon/cog-svgrepo-com.png" alt="Ikon Pengaturan Akun" class="menu-icon">
         </div>
         <div class="menu-item">
-            Riwayat Proyek
+            <p class="text">Riwayat Proyek</p>
             <img src="assets/img/Icon/clock-svgrepo-com.png" alt="Ikon Pengaturan Akun" class="menu-icon">
         </div>
         <button class="exit-button" onclick="window.location.href='index.html';">
             <img src="assets/img/Icon/arrow-right-from-bracket-svgrepo-com.png" alt="Log Out Icon" class="exit-icon">
-            Log Out
+            <p class="text">Log Out</p>
         </button>
 
 
@@ -40,8 +41,8 @@
     <!-- Navbar -->
 <footer>
     <div class="bottom-nav">
-        <a href="jawa.html" class="nav-item active"> <!-- Efek Bulat -->
-            <div class="moon-effect"></div> <!-- Elemen bulat -->
+        <a href="jawa.html" class="nav-item">
+            
             <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
             <p>Home</p>
         </a>
@@ -53,11 +54,13 @@
             <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
             <p>History</p>
         </a>
-        <a href="profile.html" class="nav-item">
+        <a href="profile.html" class="nav-item active">
+            <div class="moon-effect"></div> <!-- Elemen bulat -->
             <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
             <p>Profil</p>
         </a>
     </div>
 </footer>
+</div>
 </body>
 </html>
