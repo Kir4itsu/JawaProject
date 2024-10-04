@@ -38,6 +38,7 @@ body {
 
 .icon-jawa {
     color: #505050; /* Warna abu-abu untuk kata 'Jawa' */
+    margin-left: 5px;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan pada kata 'Kuli' */
 }
 
@@ -48,6 +49,7 @@ body {
     margin-top: 10px;
     flex-direction: row; 
     justify-content: flex-start; 
+    margin-left: 10px;
 }
 
 .profile-img {
@@ -55,6 +57,7 @@ body {
     height: 60px;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 .greeting {
@@ -77,6 +80,7 @@ body {
 .subtitle {
     font-size: 1.2rem;
     margin-top: 25px;
+    margin-left: 10px;
     color: #333;
 }
 
@@ -85,6 +89,8 @@ body {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -549,7 +555,7 @@ footer {
     .projectform-Text {
         font-size: 12px;
     }
-    
+
     .recommendation-image {
         height: 160px;
     }
@@ -584,6 +590,8 @@ footer {
     /*font-weight: bold;*/
     margin-bottom: 20px;
     color: #333;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .category-text {
@@ -688,6 +696,9 @@ footer {
     margin-bottom: 10px;  /* Memberikan jarak antara gambar dan teks */
 }
 
+.hide-slider {
+    display: none !important;
+}
 
 .runningproject-grid {
     width: 100%;  /* Sesuaikan lebar box */
@@ -700,6 +711,10 @@ footer {
     font-size: 18px;  /* Ukuran font */
     color: #333;  /* Warna teks */
     margin-top: 5px;  /* Jarak dari elemen atas */
+    margin-bottom: 80px; /* Tambah margin bottom */
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative; /* Tambah position relative */
 }
 
 /* Form.HTML */
