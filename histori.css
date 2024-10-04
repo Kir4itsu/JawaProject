@@ -1,0 +1,167 @@
+        body {
+            font-family: "Lilita One", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5E6D3;
+        }
+        .header {
+            background-color: #DAA520;
+            color: #333;
+            padding: 15px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 18px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            /*font-weight: bold;*/
+        }
+        .tabs {
+            display: flex;
+            background-color: #F1A41C;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            color: #333;
+           /*font-weight: bold;*/
+            cursor: pointer;
+            
+        }
+        .tab.active {
+            color: #ffffff;
+            background-color: #F5BC56;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .content {
+            position: relative;
+            padding-left: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            min-height: 50px;
+        }
+        /* box menu */
+        .project-item, .history-item {
+            position: relative;
+            background-color: #dddddd;
+            margin: 10px 20px 10px 0;
+            padding: 15px 15px 15px 30px;
+            border-radius: 15px;
+            flex: 0 0 auto; /* Prevent items from stretching */
+        }
+
+        /* Garis Timeline - Menggunakan flexbox untuk adaptasi otomatis 
+        #project-history, #active-projects {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }*/
+
+        /* Handling Empty State */
+        #project-history:empty::before, #active-projects:empty::before {
+            display: none; /* Sembunyikan garis jika tidak ada item */
+        }
+        
+        .project-item:only-child, .history-item:only-child {
+            margin: 15px 20px 15px 0;
+        }
+
+        /* Optimasi untuk multiple items */
+        .project-item + .project-item,
+        .history-item + .history-item {
+            margin-top: 15px; /* Consistent spacing between items */
+        }
+
+        /*dot timeline*/
+        .project-item::before, .history-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #f0a500;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .project-item::after, .history-item::after {
+            display: none;
+        }
+        .project-item:last-child::after, .history-item:last-child::after {
+            display: none;
+        }
+        .project-title, .history-title {
+        /*font-weight: bold;*/
+            margin-bottom: 5px;
+        }
+        .project-date, .history-date {
+            font-size: 0.9em;
+            color: #f0a500;
+        }
+        .project-datestart{
+            font-size: 0.8em;
+            color: #be8811;
+        }
+        .project-dateend{
+            font-size: 0.8em;
+            color: #f0a500;
+        }
+        .status {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+        .status img {
+            width: 15px; /* Ukuran gambar */
+            height: 15px;
+            margin-right: 1px; /* Jarak antara gambar dan teks */
+            vertical-align: middle; /* Menyelaraskan gambar dengan teks */
+        }
+        .status-bar {
+            margin-top: 10px;
+            background-color: #807d7d;
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .status-progress {
+            height: 100%;
+            background-color: #829C49;
+        }
+        .status.completed {
+            position: absolute;
+            bottom: 2px;
+            right: 6px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .status.cancelled {
+            position: absolute;
+            bottom: 2px;
+            right: 6px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .completed {
+            color: #4CAF50;
+        }
+        .cancelled {
+            color: #FF6D6D;
+        }
+        .in-progress {
+            color: #2196F3;
+        }
+        #active-projects {
+            display: none;
+        }

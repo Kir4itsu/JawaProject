@@ -187,6 +187,28 @@
 
     <!-- Running Project -->
     <p class="runningproject-title" style="margin-right: 10px; margin-left: 10px; font-size: 18px; color: #505050;">Proyek Anda</p>
+    <div class="project-run-grid">
+        <div class="projectrun-item">
+            <div class="project-title">Pembuatan Kolam</div>
+            <div class="project-datestart">Mulai pada 11 September 2024</div>
+            <div class="project-dateend">Sampai 21 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 30%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+    </div>
+    <div class="project-run-grid">
+        <div class="projectrun-item">
+            <div class="project-title">Pembuatan Kamar Mandi</div>
+                    <div class="project-datestart">Mulai pada 5 September 2024 </div>
+                    <div class="project-dateend">Sampai 14 September 2024</div>
+                    <div class="status-bar">
+                        <div class="status-progress" style="width: 80%;"></div>
+                    </div>
+                    <div class="status in-progress">Sedang Dalam Progress</div>
+                </div>
+            </div>
     <div class="runningproject-grid">
         <div class="runningproject-status">
             <img src="assets/img/Icon/face-sad-svgrepo-com.png" alt="Sad Face" class="custom-image">
@@ -194,6 +216,61 @@
         </div>
     </div>
 
+
+    <div class="penjelasan-grid">
+        <div class="penjelasan">
+            <h2>Kuli Jawa</h2>
+            <p>Solusi Praktis Temukan Jasa Konstruksi Terbaik di Sekitarmu</p>
+            <button class="learn-more-btn" onclick="openMenu()">
+                <span class="icon">➔ Pelajari Selengkapnya</span> 
+            </button>
+            
+        </div>
+    </div>
+    
+    <div id="floating-menu" class="floating-menu">
+        <div class="floating-menu-content">
+            <div class="app-container">
+                <div class="app-header">
+                    <div class="app-logo">
+                        <img src="/assets/img/Icon/logo_icon.png" alt="Kuli Jawa Logo">
+                    </div>
+                    <h2 class="app-title">Kuli Jawa</h2>
+                </div>
+                <div class="app-content">
+                    <div class="app-description">
+                        <h3>Apa itu Kuli Jawa app?</h3>
+                        <p>Aplikasi Kuli Jawa dirancang untuk memudahkan pengguna dalam menemukan dan terhubung dengan pekerja jasa konstruksi profesional di sekitar mereka. Dengan berbagai kategori, pengguna dapat dengan cepat menemukan tukang, kuli, atau arsitek, serta pekerja kontruksi lainnya untuk berbagai jenis pekerjaan.</p>
+                    </div>
+                    <div class="app-description">
+                        <h3>Kenapa Kuli Jawa App?</h3>
+                        <p>1. Mudah: Cari pekerja konstruksi dengan mudah dan cepat.<br>
+                        2. Terpercaya: Penyedia jasa sudah terverifikasi, jadi kualitas terjamin.<br>
+                        3. Lokal: Temukan tenaga profesional yang sewilayah dengan proyek anda.<br>
+                        4. Hemat: Bandingkan harga dan pilih sesuai budget Anda.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeFloatingMenu()">Tutup</button>
+        </div>
+    </div>
+    
+    <script>
+        function openFloatingMenu() {
+    document.getElementById('floating-menu').style.display = 'flex';
+}
+
+function closeFloatingMenu() {
+    document.getElementById('floating-menu').style.display = 'none';
+}
+
+// Add this to your existing event listener or script
+document.querySelector('.learn-more-btn').addEventListener('click', openFloatingMenu);
+    </script>
+    
+
+    </script>
+    <p class="nothing" style="margin-bottom:80px;"></p>
     <!-- Tombol + Floating New Project -->
     <a href="form.html" class="floating-button">+</a>
 

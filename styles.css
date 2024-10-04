@@ -78,8 +78,8 @@ body {
 
 /* Subtitle text below the greeting */
 .subtitle {
-    font-size: 1.2rem;
-    margin-top: 25px;
+    font-size: 1rem;
+    margin-top: 8px;
     margin-left: 10px;
     color: #333;
 }
@@ -710,8 +710,8 @@ footer {
     text-align: center;  /* Menempatkan teks di tengah */
     font-size: 18px;  /* Ukuran font */
     color: #333;  /* Warna teks */
-    margin-top: 5px;  /* Jarak dari elemen atas */
-    margin-bottom: 80px; /* Tambah margin bottom */
+    margin-top: 20px;  /* Jarak dari elemen atas */
+    margin-bottom: 5px; /* Tambah margin bottom */
     margin-left: 10px;
     margin-right: 10px;
     position: relative; /* Tambah position relative */
@@ -827,4 +827,230 @@ button[type="submit"]:active {
     background-color: #ffb700; /* Warna latar belakang saat ditekan */
     box-shadow: 0 5px #666; /* Bayangan saat ditekan */
     transform: translateY(4px); /* Efek menggerakkan tombol ke bawah */
+}
+
+
+.penjelasan-grid {
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    background-color: #DEDEDE;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px; /* Gabungkan margin untuk kiri dan kanan */
+    position: relative;
+    box-sizing: border-box; /* Memastikan padding tidak melebihi width */
+}
+
+/* Floating menu style */
+.floating-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-menu-content {
+    background-color: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.app-container {
+    background-color: white;
+}
+
+.app-header {
+    background-color: #fbbf24;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.app-logo img {
+    width: 80px; /* Sesuaikan ukuran lebar gambar */
+    height: 80px; /* Sesuaikan tinggi gambar */
+    border-radius: 50%; /* Jika ingin logo berbentuk bulat */
+    object-fit: cover; /* Agar gambar tetap proporsional */
+}
+
+.app-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.app-content {
+    padding: 20px;
+}
+
+.app-description {
+    margin-bottom: 10px;
+}
+
+.app-description h3 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.app-description p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #4b5563;
+}
+
+.menu-item-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.floating-menu-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #fbbf24;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-menu-content button:hover {
+    background-color: #f59e0b;
+}
+
+.learn-more-btn {
+    background-color: #DAA520; /* Warna dasar */
+    color: white; /* Warna teks */
+    padding: 5px 9px; /* Padding di dalam tombol */
+    border: none; /* Menghilangkan border default */
+    border-radius: 25px; /* Sudut melengkung */
+    font-family: "Lilita One", sans-serif;
+    font-size: 16px; /* Ukuran teks */
+    cursor: pointer; /* Menjadikan tombol interaktif */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek kedalaman */
+    transition: all 0.3s ease; /* Animasi halus saat hover */
+    display: inline-flex;
+    align-items: center;
+    margin-top: 13px;
+}
+
+/* Efek hover */
+.learn-more-btn:hover {
+    background-color: #DA951C; /* Warna berubah saat di-hover */
+    transform: translateY(-3px); /* Efek melayang ke atas */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+/* Efek saat ditekan */
+.learn-more-btn:active {
+    transform: scale(0.98); /* Efek mengecil saat ditekan */
+}
+
+/* Gaya untuk ikon di dalam tombol */
+.learn-more-btn .icon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.project-run-grid{
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    background-color: #DEDEDE;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px; /* Gabungkan margin untuk kiri dan kanan */
+    margin-bottom: 10px;
+    position: relative;
+    box-sizing: border-box; /* Memastikan padding tidak melebihi width */
+}
+
+.project-title{
+    margin-bottom: 5px;
+}
+
+.in-progress {
+    color: #2196F3;
+}
+
+.project-datestart{
+    font-size: 0.8em;
+    color: #be8811;
+}
+
+.project-dateend{
+    font-size: 0.8em;
+    color: #f0a500;
+}
+
+/* Status Bar */
+.status {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+.status img {
+    width: 15px; /* Ukuran gambar */
+    height: 15px;
+    margin-right: 1px; /* Jarak antara gambar dan teks */
+    vertical-align: middle; /* Menyelaraskan gambar dengan teks */
+}
+.status-bar {
+    margin-top: 10px;
+    background-color: #807d7d;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+.status-progress {
+    height: 100%;
+    background-color: #829C49;
+}
+.status.completed {
+    position: absolute;
+    bottom: 2px;
+    right: 6px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+.status.cancelled {
+    position: absolute;
+    bottom: 2px;
+    right: 6px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
 }
