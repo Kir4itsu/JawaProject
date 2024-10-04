@@ -70,11 +70,12 @@
                 height: 20px;
             }
         }
+        
     </style>
 </head>
 <body>
     <nav class="bottom-nav">
-        <a href="jawa.html" class="nav-item">
+        <a href="index.html" class="nav-item" id="home-link">
             <div class="moon-effect"></div>
             <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
             <span>Home</span>
@@ -95,5 +96,20 @@
             <span>Profil</span>
         </a>
     </nav>
+    <script>
+        // Mendapatkan URL saat ini
+        const currentUrl = window.location.pathname;
+    
+        // Mendapatkan elemen navigasi
+        const homeLink = document.getElementById('home-link');
+        const jawaLink = document.getElementById('jawa-link');
+    
+        // Cek URL dan atur kelas atau status aktif
+        if (currentUrl.includes('index.html')) {
+            homeLink.classList.add('active'); // Menandai Home aktif jika di index.html
+        } else if (currentUrl.includes('jawa.html')) {
+            jawaLink.classList.add('active'); // Menandai Kuli Jawa aktif jika di jawa.html
+        }
+    </script>
 </body>
 </html>
