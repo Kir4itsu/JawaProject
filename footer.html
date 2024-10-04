@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lilita One", sans-serif;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #DAA520;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 10px;
+        }
+
+        .moon-effect {
+            position: absolute;
+            top: -20px;
+            left: 49.5%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            display: none; 
+        }
+
+        .nav-item {
+            position: relative;
+            color: #505050;
+            text-align: center;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .nav-item img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        .nav-item.active .moon-effect {
+            background-color: #fabe26;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .bottom-nav {
+                padding: 5px;
+            }
+
+            .nav-item img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bottom-nav">
+        <a href="jawa.html" class="nav-item">
+            <div class="moon-effect"></div>
+            <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
+            <span>Home</span>
+        </a>
+        <a href="form.html" class="nav-item">
+            <div class="moon-effect"></div>
+            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="Buat Project">
+            <span>Buat Project</span>
+        </a>
+        <a href="histori.html" class="nav-item">
+            <div class="moon-effect"></div>
+            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
+            <span>History</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <div class="moon-effect"></div>
+            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
+            <span>Profil</span>
+        </a>
+    </nav>
+</body>
+</html>

@@ -18,6 +18,8 @@
             color: #333;
             padding: 15px;
             margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
             font-size: 18px;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
@@ -26,6 +28,8 @@
         .tabs {
             display: flex;
             background-color: #F1A41C;
+            margin-left: 10px;
+            margin-right: 10px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
@@ -41,8 +45,8 @@
         .tab.active {
             color: #ffffff;
             background-color: #F5BC56;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
@@ -63,12 +67,12 @@
             flex: 0 0 auto; /* Prevent items from stretching */
         }
 
-        /* Garis Timeline - Menggunakan flexbox untuk adaptasi otomatis */
+        /* Garis Timeline - Menggunakan flexbox untuk adaptasi otomatis 
         #project-history, #active-projects {
             position: relative;
             display: flex;
             flex-direction: column;
-        }
+        }*/
 
         /* Handling Empty State */
         #project-history:empty::before, #active-projects:empty::before {
@@ -99,18 +103,6 @@
             z-index: 2;
         }
         
-        /*Garis Timeline*/
-        #project-history::before, #active-projects::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 15px; /* Mulai sedikit di bawah container */
-            bottom: 15px; /* Berakhir sedikit di atas container */
-            width: 2px;
-            background-color: #f0a500;
-            height: calc(100% - 30px); /* Tinggi dinamis dikurangi margin atas dan bawah */
-        }
-
         .project-item::after, .history-item::after {
             display: none;
         }
@@ -258,28 +250,6 @@
     </script>
 
     <!-- Navbar -->
-<footer>
-    <div class="bottom-nav">
-        <a href="jawa.html" class="nav-item">
-            
-            <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
-            <p>Home</p>
-        </a>
-        <a href="form.html" class="nav-item">
-            
-            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="Proyek">
-            <p>Buat Project</p>
-        </a>
-        <a href="histori.html" class="nav-item active"> <!-- Efek Bulat -->
-            <div class="moon-effect"></div> <!-- Elemen bulat -->
-            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
-            <p>History</p>
-        </a>
-        <a href="profile.html" class="nav-item">
-            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
-            <p>Profil</p>
-        </a>
-    </div>
-</footer>
+    <script src="footer-loader.js"></script>
 </body>
 </html>
