@@ -49,24 +49,47 @@
         .content {
             position: relative;
             padding-left: 40px;
-            min-height: 50px; /* Pastikan minimal ada ruang untuk konten */
+            padding-top: 10px;
+            padding-bottom: 10px;
+            min-height: 50px;
         }
         /* box menu */
         .project-item, .history-item {
-            background-color: #dddddd;
-            margin: 10px 0;
-            margin-right: 20px;
-            padding: 15px 15px 15px 30px; /* Increased left padding */
-            border-radius: 15px;
             position: relative;
-            
+            background-color: #dddddd;
+            margin: 10px 20px 10px 0;
+            padding: 15px 15px 15px 30px;
+            border-radius: 15px;
+            flex: 0 0 auto; /* Prevent items from stretching */
+        }
+
+        /* Garis Timeline - Menggunakan flexbox untuk adaptasi otomatis */
+        #project-history, #active-projects {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Handling Empty State */
+        #project-history:empty::before, #active-projects:empty::before {
+            display: none; /* Sembunyikan garis jika tidak ada item */
         }
         
+        .project-item:only-child, .history-item:only-child {
+            margin: 15px 20px 15px 0;
+        }
+
+        /* Optimasi untuk multiple items */
+        .project-item + .project-item,
+        .history-item + .history-item {
+            margin-top: 15px; /* Consistent spacing between items */
+        }
+
         /*dot timeline*/
         .project-item::before, .history-item::before {
             content: '';
             position: absolute;
-            left: -25px; /* Sesuaikan posisi dot */
+            left: -25px;
             top: 50%;
             transform: translateY(-50%);
             width: 12px;
@@ -81,12 +104,11 @@
             content: '';
             position: absolute;
             left: 20px;
-            /* Mulai dari item pertama */
-            top: calc(35px / 2);
-            /* Sesuaikan dengan tinggi konten */
-            height: calc(100% - 35px);
+            top: 15px; /* Mulai sedikit di bawah container */
+            bottom: 15px; /* Berakhir sedikit di atas container */
             width: 2px;
             background-color: #f0a500;
+            height: calc(100% - 30px); /* Tinggi dinamis dikurangi margin atas dan bawah */
         }
 
         .project-item::after, .history-item::after {

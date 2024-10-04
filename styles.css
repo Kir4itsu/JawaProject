@@ -16,7 +16,7 @@ body {
 /* Header container */
 .header-container {
     background-color: #DAA520;
-    padding: 5px;
+    padding: 15px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -27,6 +27,18 @@ body {
 .logo img {
     width: 120px;
     margin-bottom: 10px;
+}
+
+.icon-kuli {
+    font-family: 'Lily Script One', cursive;
+    font-size: 24px; /* Ukuran teks dapat disesuaikan */
+    color: #DA951C; /* Warna kuning untuk kata 'Kuli' */
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan pada kata 'Kuli' */
+}
+
+.icon-jawa {
+    color: #505050; /* Warna abu-abu untuk kata 'Jawa' */
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan pada kata 'Kuli' */
 }
 
 /* Profile section inside the header */
@@ -121,19 +133,19 @@ body {
 }
 
 .recommendation-grid {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-    margin-top: 20px;
-    transition: transform 0.5s ease;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .recommendation-item {
-    width: calc(50% - 10px); /* Lebar default untuk 2 item per baris */
-    max-width: 280px; /* Maksimum lebar item */
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -185,11 +197,13 @@ body {
 }
 
 .recommendation-slider {
-    width: 100%; /* Lebar penuh */
-    max-width: 600px; /* Maksimum lebar slider */
-    margin: auto; /* Tengah-kan slider */
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .overlay {
     position: absolute;
     bottom: 0;
@@ -331,184 +345,221 @@ footer {
 }
 
 /* Media Queries for different screen sizes */
-
-/* Large devices (laptops/desktops) */
-@media only screen and (min-width: 768px) {
-    .category-grid {
-        justify-content: space-evenly;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 5px;
+        padding-bottom: 80px;
     }
 
-    .category-box {
-        width: 120px; /* Larger size for desktop */
-        height: 120px;
+    .header-container {
+        padding: 10px;
     }
 
-    .category-box img {
-        width: 60px; /* Larger image for desktop */
-        height: 60px;
+    .logo img {
+        width: 100px;
     }
 
-    .category-box p {
-        font-size: 16px; /* Larger font for desktop */
-        bottom: -30px;
+    .profile-info {
+        flex-direction: row;
+        align-items: flex-start;
     }
 
-    /* Adjust the last category box (Jasa Lainnya) */
-    .category-box:last-child p {
-        bottom: -40px;
+    .profile-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
     }
 
-    .category-item {
-        flex-basis: 18%;
+    .greeting h2 {
+        font-size: 1.2rem;
     }
-    
-    .categories {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 20px;
-    }
-    
+
     .category-container {
         display: flex;
-        font-size: 18px;
-        justify-content: space-around;
+        justify-content: space-between; /* Changed from space-around to reduce gaps */
         flex-wrap: wrap;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+        padding: 0 10px; /* Add some padding to prevent sticking to edges */
     }
-    
-    .category-title {
-        font-size: 18px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-    
+
     .category-box {
+        width: 22%; /* Adjust width to fit 4 items with less gap */
+        max-width: 120px; /* Maximum width for larger screens */
+        aspect-ratio: 1 / 1; /* Keep the box square */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         background-color: #DA951C;
-        border: 1px solid #ddd;
         border-radius: 10px;
         padding: 10px;
-        margin: 10px;
+        margin-bottom: 15px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
-        position: relative;
+        transition: transform 0.2s, width 0.3s, height 0.3s;
     }
-    
+
     .category-box img {
-        object-fit: cover;
+        width: 60%;
+        height: auto;
+        object-fit: contain;
     }
-    
+
     .category-box p {
-        color: #333;
-        margin: 0;
-        text-align: center;
-        margin-top: 5px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .category-box:hover {
-        transform: scale(1.05);
+        font-size: 10px;
+        bottom: -25px;
     }
 
     .recommendation-item {
-        flex: 0 0 100%; /* Untuk desktop: empat item per slide */
+        width: 100%;
     }
 
-    .recommendation-grid {
-        justify-content: center; /* Untuk layar kecil, tengahkan item */
-    }
-    .recommendation-item {
-        width: calc(50% - 10px); /* 2 item per baris */
-        max-width: 280px;
+    .bottom-nav {
+        padding: 5px;
     }
 
-    .recommendation-item img {
-        width: 100%; /* Tetap responsif di layar kecil */
-        height: auto;
-        object-fit: cover;
-        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .floating-button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        right: 10px;
+        bottom: 70px;
     }
 }
 
-/* Medium devices (tablets) */
-@media only screen and (max-width: 768px) {
-    .category-grid {
-        justify-content: space-around;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .category-container {
+        justify-content: space-evenly;
     }
 
-    .category-item {
-        flex-basis: 45%;
+    .category-box {
+        width: 90px;
+        height: 90px;
     }
 
-    
-    .recommendation-item {
-        flex: 0 0 50%; /* Untuk tablet: dua item per slide */
-        width: 100%; /* Pastikan item menggunakan lebar penuh */
-        margin-bottom: 20px; /* Jarak antar item */
-    }
-
-    .hover-content {
-        padding: 10px; /* Kurangi padding untuk tampilan lebih kompak */
-    }
-
-    .hover-content img {
-        max-width: 100%; /* Pastikan gambar tidak melampaui lebar kontainer */
-        height: auto; /* Menjaga rasio aspek gambar */
-    }
-
-    .recommendation-item {
-        flex-basis: 48%;
-    }
-
-    .recommendation-grid {
-        justify-content: center; /* Untuk layar kecil, tengahkan item */
-    }
     .recommendation-item {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
+        transform: none;
     }
 
+    .recommendation-image {
+        height: 200px;
+    }
 }
 
-/* Small devices (mobile phones) */
-@media only screen and (max-width: 220px) {
-    .category-item {
-        flex-basis: 48%;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .category-container {
+        justify-content: space-evenly;
     }
 
-    .profile-info {
-        flex-direction: column;
-        align-items: left;
+    .category-box {
+        width: 100px;
+        height: 100px;
     }
 
-    .search-bar-container {
-        flex-direction: column;
-    }
-
-    .recommendation-grid {
-        justify-content: center; /* Untuk layar kecil, tengahkan item */
-    }
     .recommendation-item {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
-    .search-bar {
-        border-radius: 20px;
+    .recommendation-image {
+        height: 250px;
+    }
+
+    .overlay h3 {
+        font-size: 20px;
+    }
+
+    .rating {
+        font-size: 16px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .category-container {
+        justify-content: space-evenly;
+    }
+
+    .category-box {
+        width: 120px;
+        height: 120px;
+    }
+
+    .recommendation-item {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .recommendation-image {
+        height: 300px;
+    }
+}
+
+/* Responsive adjustments for form elements */
+@media only screen and (max-width: 600px) {
+    .projectform-grid {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #budget-amount {
         width: 100%;
     }
-    .recommendation-item img {
-        width: 100%; /* Tetap responsif di layar kecil */
-        height: auto;
-        object-fit: cover;
-        object-position: 20% 60%; /* Tetap diatur sesuai posisi yang diinginkan */
+
+    button[type="submit"] {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .recommendation-item {
+        width: 100%;
+        max-width: 100%; /* Memastikan tidak melebihi lebar container */
+        transform: none; /* Menghilangkan transform default */
+    }
+
+    .recommendation-image {
+        height: 180px; /* Mengurangi tinggi gambar untuk layar kecil */
+    }
+}
+
+/* Ensure text doesn't overflow on small screens */
+@media only screen and (max-width: 400px) {
+    .category-box p,
+    .recommendation-text,
+    .nav-item,
+    .projectform-Text {
+        font-size: 12px;
+    }
+
+    .recommendation-image {
+        height: 160px;
+    }
+
+    .overlay h3 {
+        font-size: 18px;
+    }
+
+    .rating {
+        font-size: 14px;
     }
 }
 

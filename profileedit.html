@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Profil</h1>
+        
+        <form class="edit-form">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" value="Kiraitsu Mochizuki">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="kira@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="profile-pic">Foto Profil</label>
+                <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="bg-pic">Foto Latar Belakang</label>
+                <input type="file" id="bg-pic" name="bg-pic" accept="image/*">
+            </div>
+
+            <!-- Preview Section -->
+            <div class="profile-card-preview">
+                <div class="profile-bg-preview">
+                    <img id="bg-preview" src="#" alt="Preview Background" style="display: none;">
+                </div>
+                <img id="preview" src="#" alt="Preview Foto Profil" class="edit-profile-image" style="display: none;">
+                <div class="edit-profile-name-preview" id="name-preview">Kiraitsu Mochizuki</div>
+                <div class="edit-profile-mail-preview" id="email-preview">kira@gmail.com</div>
+            </div>            
+
+            <div class="button-container">
+                <a href="profile.html" class="back-button profile-back-button">Kembali ke Profil</a>
+                <button type="submit" class="submit-button-profileedit">Simpan Perubahan</button>
+            </div>            
+
+    <!-- Script for Preview Images and Text -->
+    <script>
+        // Ganti preview gambar profil
+        document.getElementById('profile-pic').addEventListener('change', function (event) {
+            const preview = document.getElementById('preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Ganti preview gambar background
+        document.getElementById('bg-pic').addEventListener('change', function (event) {
+            const bgPreview = document.getElementById('bg-preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                bgPreview.src = reader.result;
+                bgPreview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Ganti nama dan email di preview saat user mengetik
+        document.getElementById('name').addEventListener('input', function () {
+            document.getElementById('name-preview').textContent = this.value;
+        });
+
+        document.getElementById('email').addEventListener('input', function () {
+            document.getElementById('email-preview').textContent = this.value;
+        });
+    </script>
+</body>
+</html>

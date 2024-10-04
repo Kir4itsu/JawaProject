@@ -66,7 +66,7 @@ h1 {
 .profile-name {
     font-size: 22px;
     color: #ffffff;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-bottom: 5px;
     position: relative; /* Agar berada di atas pseudo-element */
     z-index: 1; /* Menempatkan di atas blur */
@@ -125,3 +125,205 @@ h1 {
 .exit-button:hover {
     background-color: #f7bd2a;
 }
+
+/* Tambahan style untuk form */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+  /*  font-weight: bold;*/
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px; /* Menambahkan jarak antara tombol */
+}
+
+
+/* Tombol Kembali ke Profil */
+.profile-back-button {
+    background-color: #f44336; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Ukuran font */
+    text-decoration: none; /* Tanpa garis bawah */
+    display: inline-block; /* Menampilkan sebagai block inline */
+    cursor: pointer; /* Pointer saat hover */
+    transition: background-color 0.3s; /* Transisi untuk hover */
+}
+
+/* Tombol Simpan Perubahan */
+.submit-button-profileedit {
+    font-family: "Lilita One", sans-serif;
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Ukuran font */
+    cursor: pointer; /* Pointer saat hover */
+    transition: background-color 0.3s; /* Transisi untuk hover */
+}
+
+.profile-back-button:hover {
+    background-color: #e53935; /* Warna saat hover */
+}
+
+.submit-button-profileedit:hover {
+    background-color: #45a049; /* Warna saat hover */
+}
+
+.preview-container {
+    text-align: center; /* Agar gambar di tengah */
+    margin-top: 10px;
+}
+
+#preview {
+    display: block;
+    margin: 0 auto; /* Posisikan gambar di tengah */
+    max-width: 150px; /* Set ukuran maksimal gambar */
+    max-height: 150px;
+    border-radius: 50%; /* Membuat gambar bulat */
+    border: 2px solid #505050;
+    object-fit: cover; /* Menyesuaikan gambar dengan rasio aspek yang benar */
+}
+#size, #position {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-bg-preview {
+        height: 100%;
+        width: 100%;
+        filter: blur(2px); /* Keep the blur effect */
+    }
+    .profile-card-preview {
+        height: 100px;
+    }
+    #bg-preview {
+        width: 100%;
+        height: auto; /* Ensure image aspect ratio is maintained */
+    }
+    .edit-profile-image {
+        width: 60px; /* Reduce image size for smaller screens */
+        height: 60px;
+    }
+
+    .edit-profile-name-preview {
+        font-size: 18px; /* Ukuran font lebih kecil untuk layar kecil */
+        top: 90px; /* Sesuaikan posisi nama jika diperlukan */
+    }
+
+    .edit-profile-mail-preview {
+        font-size: 12px; /* Ukuran font lebih kecil untuk layar kecil */
+        top: 115px; /* Ubah posisi email agar berada di bawah nama */
+    }
+
+    .profile-back-button, .submit-button-profileedit {
+        padding: 8px 15px; /* Reduce padding */
+        font-size: 14px;   /* Adjust font size */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 10px;              /* Add some space between the buttons */
+    }
+}
+
+/* Container for Profile Card Preview */
+.profile-card-preview {
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid #ddcbcb;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: calc(100% - 40px); /* Adjust width to fit container */
+    max-width: 360px; /* Maximum width */
+    height: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Background Preview Profile Edit*/
+.profile-bg-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna overlay hitam dengan transparansi */
+    border-radius: 15px;
+    z-index: 0;
+}
+
+#bg-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    filter: blur(2px); /* Tambahkan efek blur */
+}
+
+/* Edit Profile Image Preview */
+.edit-profile-image {
+    width: 80px; /* Ukuran gambar profil */
+    height: 80px; /* Ukuran gambar profil */
+    border-radius: 50%; /* Membuat gambar profil bulat */
+    border: 2px solid white; /* Border putih di sekitar gambar profil */
+    position: absolute; /* Menggunakan posisi absolut agar lebih fleksibel */
+    top: 30px; /* Posisi gambar agar sedikit lebih tinggi */
+    left: 50%; /* Memposisikan gambar di tengah */
+    transform: translateX(-50%); /* Memusatkan gambar */
+    z-index: 1; /* Menempatkan di atas elemen lain */
+    background-color: white; /* Warna latar belakang gambar */
+}
+
+/* Edit Profile Name and Email */
+.edit-profile-name-preview {
+    font-size: 20px; /* Ukuran font nama */
+    color: white; /* Warna teks */
+    /* font-weight: bold; Menebalkan teks */
+    position: absolute; /* Menggunakan posisi absolut untuk lebih fleksibel */
+    top: 120px; /* Posisi nama di bawah gambar profil */
+    left: 50%; /* Memposisikan nama di tengah */
+    transform: translateX(-50%); /* Memusatkan nama */
+    z-index: 1; /* Menempatkan di atas elemen lain */
+}
+
+.edit-profile-mail-preview {
+    font-size: 14px; /* Ukuran font email */
+    color: white; /* Warna teks */
+    position: absolute; /* Menggunakan posisi absolut untuk lebih fleksibel */
+    top: 145px; /* Posisi email di bawah nama */
+    left: 50%; /* Memposisikan email di tengah */
+    transform: translateX(-50%); /* Memusatkan email */
+    z-index: 1; /* Menempatkan di atas elemen lain */
+}
+
