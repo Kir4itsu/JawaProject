@@ -17,10 +17,29 @@ body {
 .header-container {
     background-color: #DAA520;
     padding: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.notification-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.notification-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 /* Logo in the top-left */

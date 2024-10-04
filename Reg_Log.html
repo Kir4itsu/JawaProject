@@ -225,7 +225,7 @@ select {
             <div class="form-header">
                 <img src="assets/img/Icon/arrow-left-svgrepo-com.png" alt="Back" class="back-arrow">
                 <!--<span class="back-arrow">←</span> -->
-                <h2>Daftar</h2>
+                <h2>Daftar User</h2>
             </div>
             <div class="form-signbackground"> <!-- Menambahkan Background Box -->
             <form>
@@ -283,6 +283,45 @@ select {
             </form>
             </div>
         </div>
+
+        <img src="assets/img/Icon/arrow-right-svgrepo-com.png" alt="Right" class="right-arrow">
+        <div class="form-container" id="providerForms">
+            <div class="form-header">
+                <img src="assets/img/Icon/arrow-left-svgrepo-com.png" alt="Back" class="back-arrow">
+                <h2>Daftar Penyedia Jasa</h2>
+            </div>
+            
+            <!-- Form Pendaftaran Penyedia Layanan -->
+            <div id="providerRegisterForm" class="form-signbackground">
+                <div class="form-group">
+                    <label for="providerName">Nama</label>
+                    <input type="text" id="providerName" name="providerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="providerPhone">Nomor Telepon</label>
+                    <input type="tel" id="providerPhone" name="providerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="providerEmail">Email</label>
+                    <input type="email" id="providerEmail" name="providerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="providerService">Jenis Layanan</label>
+                    <select id="providerService" name="providerService" required>
+                        <option value="">Pilih jenis layanan</option>
+                        <option value="tukang">Tukang</option>
+                        <option value="kuli">Kuli</option>
+                        <option value="arsitek">Arsitek</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="providerExperience">Pengalaman (tahun)</label>
+                    <input type="number" id="providerExperience" name="providerExperience" required>
+                </div>
+                <button class="button" onclick="window.location.href='jawa.html';">Daftar</button>
+            </div>
+        </div> 
+
         <img src="assets/img/Icon/arrow-right-svgrepo-com.png" alt="Right" class="right-arrow">
         <div class="form-container">
             <div class="form-header">
@@ -310,7 +349,7 @@ select {
                 <div class="form-header">
                     <img src="assets/img/Icon/arrow-left-svgrepo-com.png" alt="Back" class="back-arrow">
                    <!-- <span class="back-arrow">←</span> -->
-                    <h2>Login</h2>
+                    <h2>Login User & Penyedia Jasa</h2>
                 </div>
                 <div class="form-loginbackground"> 
                 <div class="login-form">
@@ -333,6 +372,5 @@ select {
                 </div>
             </div>
         </div>
-    </div>
 </body>
 </html>

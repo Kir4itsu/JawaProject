@@ -28,7 +28,7 @@
         .moon-effect {
             position: absolute;
             top: -20px;
-            left: 49.5%;
+            left: 50%;
             transform: translateX(-50%);
             width: 60px;
             height: 60px;
@@ -37,7 +37,7 @@
             z-index: -1;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
-            display: none; 
+            display: none;
         }
 
         .nav-item {
@@ -56,6 +56,7 @@
         }
 
         .nav-item.active .moon-effect {
+            display: block;
             background-color: #fabe26;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
@@ -70,46 +71,83 @@
                 height: 20px;
             }
         }
-        
     </style>
 </head>
 <body>
     <nav class="bottom-nav">
-        <a href="jawa.html" class="nav-item">
+        <a href="index.html" class="nav-item home-link">
             <div class="moon-effect"></div>
-            <img src="assets/img/Icon/home-svgrepo-com.png" alt="Home">
-            <span>Home</span>
+            <img src="assets/img/Icon/home-svgrepo-com.png" alt="">
+            Home
         </a>
+
         <a href="form.html" class="nav-item">
             <div class="moon-effect"></div>
-            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="Buat Project">
-            <span>Buat Project</span>
+            <img src="assets/img/Icon/plus-svgrepo-com.png" alt="">
+            Buat Project
         </a>
+
         <a href="histori.html" class="nav-item">
             <div class="moon-effect"></div>
-            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="History">
-            <span>History</span>
+            <img src="assets/img/Icon/clock-svgrepo-com.png" alt="">
+            History
         </a>
-        <a href="profile.html" class="nav-item">
+
+        <a href="profile.html" class="nav-item profile-link">
             <div class="moon-effect"></div>
-            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="Profil">
-            <span>Profil</span>
+            <img src="assets/img/Icon/circle-user-svgrepo-com.png" alt="">
+            Profil
         </a>
     </nav>
-   <!--<script>
-        // Mendapatkan URL saat ini
-        const currentUrl = window.location.pathname;
-    
-        // Mendapatkan elemen navigasi
-        const homeLink = document.getElementById('home-link');
-        const jawaLink = document.getElementById('jawa-link');
-    
-        // Cek URL dan atur kelas atau status aktif
-        if (currentUrl.includes('index.html')) {
-            homeLink.classList.add('active'); // Menandai Home aktif jika di index.html
-        } else if (currentUrl.includes('jawa.html')) {
-            jawaLink.classList.add('active'); // Menandai Kuli Jawa aktif jika di jawa.html
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setActiveNavItem();
+            setupNavigation();
+        });
+
+        function setupNavigation() {
+            const homeLink = document.querySelector('.home-link');
+            const profileLink = document.querySelector('.profile-link');
+            const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+            
+            if (homeLink) {
+                homeLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (currentPage === 'index.html' || currentPage === 'jawa.html') {
+                        window.location.href = 'index.html';
+                    } else {
+                        window.location.href = 'jawa.html';
+                    }
+                });
+            }
+            
+            if (profileLink) {
+                profileLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'profile.html';
+                });
+            }
         }
-    </script> -->
+
+        function setActiveNavItem() {
+            const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (currentPage === 'index.html' || currentPage === 'jawa.html') {
+                document.querySelector('.home-link').classList.add('active');
+            } else if (currentPage === 'form.html') {
+                document.querySelector('a[href="form.html"]').classList.add('active');
+            } else if (currentPage === 'histori.html') {
+                document.querySelector('a[href="histori.html"]').classList.add('active');
+            } else if (currentPage === 'profile.html') {
+                document.querySelector('.profile-link').classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>

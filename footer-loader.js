@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setActiveNavItem() {
     const currentPage = window.location.pathname.split("/").pop();
+    
+    // Jika berada di index.html, arahkan link profil ke profilen.html
+    if (currentPage === 'index.html' || currentPage === '') {
+        const profilLink = document.querySelector('.nav-item[href="profilen.html"]');
+        if (profilLink) {
+            profilLink.href = 'profilen.html';
+        }
+    }
+    
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         if (item.getAttribute('href') === currentPage) {
