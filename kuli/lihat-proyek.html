@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Aktif & Histori</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styles.css"> <!-- Link to styles.css -->
+    <link rel="stylesheet" type="text/css" href="../histori.css"> <!-- Link to histori.css -->
+</head>
+<body>
+    <div class="header">
+        Daftar Proyek
+    </div>
+    <div class="tabs">
+       
+        <div class="tab active" onclick="showContent('project-history')">Proyek Disekitarmu</div>
+    </div>
+   
+    <div id="project-history" class="content">
+        <div class="history-item">
+            <span class="status completed"><img src="../assets/img/Icon/search-svgrepo-com.png"><a href="detil-proyek.html">Lihat</a></span>
+            <div class="history-title">Perbaikan Gedung Sekolah</div>
+            <div class="history-date">Dimulai pada 12 November 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="../assets/img/Icon/search-svgrepo-com.png">Lihat</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Dimulai pada 8 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="../assets/img/Icon/search-svgrepo-com.png">Lihat</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Dimulai pada 7 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="../assets/img/Icon/search-svgrepo-com.png">Lihat</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Lihat pada 6 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="../assets/img/Icon/search-svgrepo-com.png">Lihat</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Lihat pada 5 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="../assets/img/Icon/search-svgrepo-com.png">Lihat</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Lihat pada 4 Agustus 2024</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            document.getElementById('active-projects').style.display = 'none';
+            document.getElementById('project-history').style.display = 'none';
+            document.getElementById(contentId).style.display = 'block';
+
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+    <!-- Navbar -->
+    <script src="footer-loader.js"></script>
+</body>
+</html>

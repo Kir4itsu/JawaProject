@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Aktif & Histori</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styles.css"> <!-- Link to styles.css -->
+    <link rel="stylesheet" type="text/css" href="../histori.css"> <!-- Link to histori.css -->
+</head>
+<body>
+    <div class="header">
+        Proyek Aktif & Histori
+    </div>
+    <div class="tabs">
+        <div class="tab" onclick="showContent('active-projects')">Proyek Aktif</div>
+        <div class="tab active" onclick="showContent('project-history')">Histori</div>
+    </div>
+    <div id="active-projects" class="content">
+        <div class="project-item">
+            <div class="project-title">Pembuatan Kolam</div>
+            <div class="project-datestart">Mulai pada 11 September 2024</div>
+            <div class="project-dateend">Sampai 21 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 30%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+        <div class="project-item">
+            <div class="project-title">Pembuatan Kamar Mandi</div>
+            <div class="project-datestart">Mulai pada 5 September 2024 </div>
+            <div class="project-dateend">Sampai 14 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 80%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+    </div>
+    <div id="project-history" class="content">
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 9 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 8 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 7 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status completed"><img src="assets/img/Icon/succed.png">Selesai</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 6 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 5 Agustus 2024</div>
+        </div>
+        <div class="history-item">
+            <span class="status cancelled"><img src="assets/img/Icon/cancelled.png">Dibatalkan</span>
+            <div class="history-title">Perbaikan Atap</div>
+            <div class="history-date">Selesai pada 4 Agustus 2024</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            document.getElementById('active-projects').style.display = 'none';
+            document.getElementById('project-history').style.display = 'none';
+            document.getElementById(contentId).style.display = 'block';
+
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+    <!-- Navbar -->
+    <script src="footer-loader.js"></script>
+</body>
+</html>

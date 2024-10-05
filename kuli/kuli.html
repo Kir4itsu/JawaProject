@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kuli Jawa</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+        <style>
+            #splash-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #DAA520;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            #splash-logo {
+                width: 150px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            #splash-credit {
+                color: #505050;
+                font-family: "Lilita One", sans-serif;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="splash-screen">
+            <img src="../assets/img/Icon/logo_icon.png" alt="Kuli Jawa Logo" id="splash-logo">
+            <p id="splash-credit">Made by Kiraitsu</p>
+        </div>
+        <div class="header-container">
+            <header>
+                <div class="logo">
+                    <span class="icon-kuli">Kuli <span class="icon-jawa">Jawa</span></span>
+                </div>
+                <div class="notification-icon">
+                    <img src="../assets/img/Icon/bell-svgrepo-com.png"  alt="Notifications"  onclick="window.location.href='notif.html'";>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="profile-info">
+        <img class="profile-img" src="../assets/img/Profile/lumine.png" alt="Profile Image">
+        <div class="greeting">
+            <p id="greeting-message">Selamat Pagi,</p>
+            <h2>Kiraitsu Mochizuki</h2>
+        </div>
+    </div>
+    
+    <script>
+        // Mendapatkan elemen untuk menampilkan ucapan
+        var greetElem = document.getElementById("greeting-message");
+    
+        // Mendapatkan jam saat ini
+        var curHr = new Date().getHours();
+    
+        // Menentukan ucapan berdasarkan jam
+        if (curHr < 12) {
+            greetElem.innerHTML = "Selamat Pagi,";
+        } else if (curHr < 18) {
+            greetElem.innerHTML = "Selamat Siang,";
+        } else {
+            greetElem.innerHTML = "Selamat Malam,";
+        }
+    </script>
+  
+       <!-- <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Cari Jasa">
+            <button class="search-button">
+                <img src="assets/img/Icon/search-svgrepo-com.png" alt="Search Icon">
+            </button>
+        </div>-->
+</header>
+</div>
+
+
+
+<div class="categories">
+<p class="category-title">Kategori Jasa Anda</p>
+    <div class="category-container">
+       
+        <div class="category-box">
+            <img src="../assets/img/Kategori Jasa/technical-support-worker-fix-repair-svgrepo-com.png" alt="Tukang">
+            <p>Tukang</p>
+        </div>
+        
+        <!--<div class="category-box">
+            <img src="assets/img/Kategori Jasa/business-resources-business-business-tools-svgrepo-com.png" alt="Jasa Lainnya">
+            <p>Jasa Lainnya</p>
+        </div>-->
+    </div>
+</div>
+
+</div>
+<!-- Recommendation Section -->
+<p class="recommendation-title" style="margin-right: 10px; margin-left: 10px; font-size: 18px; color: #505050;">Proyek - proyek</p>
+<div class="recommendation-slider">
+    <div class="recommendation-grid">
+        <div class="recommendation-item" id="item1">
+            <div class="recommendation-image" style="background-image: url('../assets/img/Rekomendasi Jasa/Ruang_tamu.jpg');">
+                <div class="overlay">
+                    <h3>Perbaikan Ruang Tamu</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="score">(4.7)</span>
+                        <span class="totalrate">131 Penilaian</span>
+                    </div>
+                </div>
+            </div>
+            <p><!-- Bebas Mau isi apan di bawah --></p>
+            <div class="hover-content">
+                <img src="../assets/img/Rekomendasi Jasa/Ruang_tamu.jpg" alt="Perbaikan Ruang Tamu">
+                <p>Perbaikan ruang tamu bertujuan untuk menciptakan suasana yang lebih nyaman dan menarik...</p>
+            </div>
+        </div>
+
+        <div class="recommendation-item" id="item2">
+            <div class="recommendation-image" style="background-image: url('../assets/img/Rekomendasi Jasa/Luar.jpg');">
+                <div class="overlay">
+                    <h3>Perbaikan Pagar Rumah</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">(5.0)</span>
+                        <span class="totalrate">198 Penilaian</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-content">
+                <img src="assets/img/Rekomendasi Jasa/Luar.jpg" alt="Perbaikan Pagar Rumah">
+                <p>Perbaikan pagar rumah penting untuk meningkatkan keamanan dan estetika...</p>
+            </div>
+        </div>
+
+        <div class="recommendation-item" id="item3">
+            <div class="recommendation-image" style="background-image: url('../assets/img/Rekomendasi Jasa/TutupKolam.jpg');">
+                <div class="overlay">
+                    <h3>Perbaikan Atap</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="score">(4.8)</span>
+                        <span class="totalrate">151 Penilaian</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-content">
+                <img src="../assets/img/Rekomendasi Jasa/TutupKolam.jpg" alt="Perbaikan Atap">
+                <p>Perbaikan atap sangat penting untuk menjaga keselamatan dan kenyamanan rumah...</p>
+            </div>
+        </div>
+
+        <div class="recommendation-item" id="item4">
+            <div class="recommendation-image" style="background-image: url('../assets/img/Rekomendasi Jasa/Kolam.jpg');">
+                <div class="overlay">
+                    <h3>Pembuatan Kolam Ikan</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="score">(4.6)</span>
+                        <span class="totalrate">123 Penilaian</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hover-content">
+                <img src="../assets/img/Rekomendasi Jasa/Kolam.jpg" alt="Pembuatan Kolam Ikan">
+                <p>Pembuatan kolam ikan di halaman rumah dapat menjadi proyek menarik...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Menyisipkan JavaScript sebelum penutup body -->
+<script src="../sliderjasa.js"></script> <!-- Menghubungkan file JavaScript eksternal -->
+<script src="../floatingMenu.js"></script> <!-- Menghubungkan file JavaScript eksternal -->
+
+    <!-- Running Project -->
+    <p class="runningproject-title" style="margin-right: 10px; margin-left: 10px; font-size: 18px; color: #505050;">Anda dalam Proyek</p>
+    <div class="project-run-grid">
+        <div class="projectrun-item">
+            <div class="project-title">Pembuatan Kolam</div>
+            <div class="project-datestart">Mulai pada 11 September 2024</div>
+            <div class="project-dateend">Sampai 21 September 2024</div>
+            <div class="status-bar">
+                <div class="status-progress" style="width: 30%;"></div>
+            </div>
+            <div class="status in-progress">Sedang Dalam Progress</div>
+        </div>
+    </div>
+    <div class="project-run-grid">
+        <div class="projectrun-item">
+            <div class="project-title">Pembuatan Kamar Mandi</div>
+                    <div class="project-datestart">Mulai pada 5 September 2024 </div>
+                    <div class="project-dateend">Sampai 14 September 2024</div>
+                    <div class="status-bar">
+                        <div class="status-progress" style="width: 80%;"></div>
+                    </div>
+                    <div class="status in-progress">Sedang Dalam Progress</div>
+                </div>
+            </div>
+    <div class="runningproject-grid">
+        <div class="runningproject-status">
+            <img src="../assets/img/Icon/face-sad-svgrepo-com.png" alt="Sad Face" class="custom-image">
+            <p>Yah, masih belum ada proyek yang Anda ikuti nih</p>
+        </div>
+    </div>
+
+
+    <div class="penjelasan-grid">
+        <div class="penjelasan">
+            <h2>Kuli Jawa</h2>
+            <p>Solusi Praktis Temukan Jasa Konstruksi Terbaik di Sekitarmu</p>
+            <button class="learn-more-btn" onclick="openMenu()">
+                <span class="icon">➔ Pelajari Selengkapnya</span> 
+            </button>
+            
+        </div>
+    </div>
+    
+    <div id="floating-menu" class="floating-menu">
+        <div class="floating-menu-content">
+            <div class="app-container">
+                <div class="app-header">
+                    <div class="app-logo">
+                        <img src="../assets/img/Icon/logo_icon.png" alt="Kuli Jawa Logo">
+                    </div>
+                    <h2 class="app-title">Kuli Jawa</h2>
+                </div>
+                <div class="app-content">
+                    <div class="app-description">
+                        <h3>Apa itu Kuli Jawa app?</h3>
+                        <p>Aplikasi Kuli Jawa dirancang untuk memudahkan pengguna dalam menemukan dan terhubung dengan pekerja jasa konstruksi profesional di sekitar mereka. Dengan berbagai kategori, pengguna dapat dengan cepat menemukan tukang, kuli, atau arsitek, serta pekerja kontruksi lainnya untuk berbagai jenis pekerjaan.</p>
+                    </div>
+                    <div class="app-description">
+                        <h3>Kenapa Kuli Jawa App?</h3>
+                        <p>1. Mudah: Cari pekerja konstruksi dengan mudah dan cepat.<br>
+                        2. Terpercaya: Penyedia jasa sudah terverifikasi, jadi kualitas terjamin.<br>
+                        3. Lokal: Temukan tenaga profesional yang sewilayah dengan proyek anda.<br>
+                        4. Hemat: Bandingkan harga dan pilih sesuai budget Anda.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeFloatingMenu()" style="font-family: 'Lilita One', sans-serif;">Tutup</button>
+        </div>
+    </div>
+    
+    <script>
+        function openFloatingMenu() {
+    document.getElementById('floating-menu').style.display = 'flex';
+}
+
+function closeFloatingMenu() {
+    document.getElementById('floating-menu').style.display = 'none';
+}
+
+// Add this to your existing event listener or script
+document.querySelector('.learn-more-btn').addEventListener('click', openFloatingMenu);
+    </script>
+    
+    <p class="nothing" style="margin-bottom:80px;"></p>
+    <!-- Tombol + Floating New Project -->
+    <a href="form.html" class="floating-button">+</a>
+
+            <!-- Navbar -->
+            <script src="footer-loader.js"></script>
+        </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.display = 'none';
+            }, 3000);
+        </script>
+    </body>
+</html>
