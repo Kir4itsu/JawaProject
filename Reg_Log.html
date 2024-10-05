@@ -353,20 +353,88 @@ select {
                 </div>
                 <div class="form-loginbackground"> 
                 <div class="login-form">
-                    <form>
+
+                    <form action="#" name="login_form" method="post" onsubmit="return handleLogin(event)">
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="Masukkan Alamat Email Anda">
+                            <input type="email" placeholder="Masukkan Alamat Email Anda" name="email" id="email" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" placeholder="Masukkan Password Anda">
+                            <input type="password" placeholder="Masukkan Password Anda" name="pass" id="pass" required>
                         </div>
                         <div class="form-group">
                             <label>Lupa Password?</label>
                             <a href="#">Klik disini</a>
                         </div>
-                        <button class="button" onclick="window.location.href='jawa.html';">Login</button>
+                        <button class="button" type="submit">Login</button>
+                    </form>
+                    
+                    <script>
+                    function handleLogin(event) {
+                        event.preventDefault();
+                        var password = document.getElementById('pass').value;
+                        
+                        if (password === 'user') {
+                            window.location.href = 'jawa.html';
+                        } else if (password === 'kuli') {
+                            window.location.href = 'kuli/kuli.html';
+                        } else {
+                            alert('Password salah. Silakan coba lagi.');
+                        }
+                        return false;
+                    }
+                    </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="login-container">
+                <div class="form-header">
+                    <img src="assets/img/Icon/arrow-left-svgrepo-com.png" alt="Back" class="back-arrow">
+                   <!-- <span class="back-arrow">←</span> -->
+                    <h2>Lupa Password</h2>
+                </div>
+                <div class="form-loginbackground"> 
+                <div class="login-form">
+
+                    <form action="#" name="login_form" method="post" onsubmit="return handleLogin(event)">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Masukkan Alamat Email Anda" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor Telepon</label>
+                            <input type="password" placeholder="Masukkan Nomor Telepon Anda" name="pass" id="pass" required>
+                        </div>
+                        <button class="button" type="submit">Kirim Tautan Pemulihan</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="login-container">
+                <div class="form-header">
+                    <img src="assets/img/Icon/arrow-left-svgrepo-com.png" alt="Back" class="back-arrow">
+                   <!-- <span class="back-arrow">←</span> -->
+                    <h2>Ubah Sandi</h2>
+                </div>
+                <div class="form-loginbackground"> 
+                <div class="login-form">
+
+                    <form action="#" name="login_form" method="post" onsubmit="return handleLogin(event)">
+                        <div class="form-group">
+                            <label>Kata Sandi</label>
+                            <input type="email" placeholder="Masukkan Kata Sandi Anda" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Konfirmasi Kata Sandi Baru</label>
+                            <input type="password" placeholder="Konfirmasi Ulang Kata Sandi Anda" name="pass" id="pass" required>
+                        </div>
+                        <button class="button" type="submit">Ubah Kata Sandi</button>
                     </form>
                     </div>
                 </div>

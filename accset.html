@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengaturan Akun</title>
     <link rel="stylesheet" href="profile.css">
+    <style>
+        .floating-menu {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .floating-menu button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Lilita One", sans-serif;
+        }
+        .floating-menu button.confirm {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .floating-menu button.cancel {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        /* Gaya baru untuk tombol "Kembali ke Profil" */
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50; /* Warna hijau */
+            color: white;
+            text-decoration: none;
+            font-family: "Lilita One", sans-serif;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .back-button:hover {
+            background-color: #45a049; /* Warna hijau yang lebih gelap saat hover */
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,19 +78,251 @@
         <div class="settings-menu">
             <div class="menu-item">
                 Ubah Kata Sandi
-                <img src="assets/img/Icon/lock-svgrepo-com.png" alt="Password Icon" class="menu-icon">
+                <img src="assets/img/Icon/lock-closed-svgrepo-com.png" alt="Lock Icon" class="menu-icon">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" id="delete-account">
                 <p class="text">Hapus Akun</p>
                 <img src="assets/img/Icon/bell-svgrepo-com.png" alt="Notification Icon" class="menu-icon">
-            </div>
-            <div class="menu-item">
-                Nomor Telepon
-                <img src="assets/img/Icon/shield-svgrepo-com.png" alt="Privacy Icon" class="menu-icon">
             </div>
         </div>
         
         <a href="profile.html" class="back-button">Kembali ke Profil</a>
     </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="floating-menu" id="confirmation-menu">
+        <h2>Konfirmasi Penghapusan Akun</h2>
+        <p>Apakah Anda yakin ingin menghapus akun Anda? Tindakan ini tidak dapat dibatalkan.</p>
+        <button class="confirm" id="confirm-delete">Ya, Hapus Akun</button>
+        <button class="cancel" id="cancel-delete">Batal</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteAccountBtn = document.getElementById('delete-account');
+            const overlay = document.getElementById('overlay');
+            const confirmationMenu = document.getElementById('confirmation-menu');
+            const confirmDeleteBtn = document.getElementById('confirm-delete');
+            const cancelDeleteBtn = document.getElementById('cancel-delete');
+
+            deleteAccountBtn.addEventListener('click', function() {
+                overlay.style.display = 'block';
+                confirmationMenu.style.display = 'block';
+            });
+
+            function hideConfirmationMenu() {
+                overlay.style.display = 'none';
+                confirmationMenu.style.display = 'none';
+            }
+
+            cancelDeleteBtn.addEventListener('click', hideConfirmationMenu);
+
+            overlay.addEventListener('click', hideConfirmationMenu);
+
+            confirmDeleteBtn.addEventListener('click', function() {
+                // Add your account deletion logic here
+                alert('Akun Anda telah dihapus.');
+                hideConfirmationMenu();
+            });
+        });
+    </script>
 </body>
 </html>
+
+<!--
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Akun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .settings-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-item {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .menu-item:hover {
+            background-color: #e9e9e9;
+        }
+        .menu-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pengaturan Akun</h1>
+        
+        <ul class="settings-menu">
+            <li class="menu-item" data-action="edit-profile">
+                <img src="assets/img/Icon/user-svgrepo-com.png" alt="Profile Icon" class="menu-icon">
+                Edit Profil
+            </li>
+            <li class="menu-item" data-action="change-password">
+                <img src="assets/img/Icon/lock-svgrepo-com.png" alt="Password Icon" class="menu-icon">
+                Ubah Kata Sandi
+            </li>
+            <li class="menu-item" data-action="privacy">
+                <img src="assets/img/Icon/shield-svgrepo-com.png" alt="Privacy Icon" class="menu-icon">
+                Privasi dan Keamanan
+            </li>
+            <li class="menu-item" data-action="notifications">
+                <img src="assets/img/Icon/bell-svgrepo-com.png" alt="Notification Icon" class="menu-icon">
+                Notifikasi
+            </li>
+            <li class="menu-item" data-action="language">
+                <img src="assets/img/Icon/language-svgrepo-com.png" alt="Language Icon" class="menu-icon">
+                Bahasa
+            </li>
+            <li class="menu-item" data-action="payment">
+                <img src="assets/img/Icon/credit-card-svgrepo-com.png" alt="Payment Icon" class="menu-icon">
+                Metode Pembayaran
+            </li>
+            <li class="menu-item" data-action="delete-account">
+                <img src="assets/img/Icon/trash-svgrepo-com.png" alt="Delete Icon" class="menu-icon">
+                Hapus Akun
+            </li>
+        </ul>
+        
+        <a href="profile.html" class="back-button">Kembali ke Profil</a>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.getElementsByClassName('close')[0];
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    handleMenuAction(action);
+                });
+            });
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            function handleMenuAction(action) {
+                switch(action) {
+                    case 'edit-profile':
+                        showModal('Edit Profil', 'Form edit profil akan ditampilkan di sini.');
+                        break;
+                    case 'change-password':
+                        showModal('Ubah Kata Sandi', 'Form ubah kata sandi akan ditampilkan di sini.');
+                        break;
+                    case 'privacy':
+                        showModal('Privasi dan Keamanan', 'Pengaturan privasi dan keamanan akan ditampilkan di sini.');
+                        break;
+                    case 'notifications':
+                        showModal('Notifikasi', 'Pengaturan notifikasi akan ditampilkan di sini.');
+                        break;
+                    case 'language':
+                        showModal('Bahasa', 'Pilihan bahasa akan ditampilkan di sini.');
+                        break;
+                    case 'payment':
+                        showModal('Metode Pembayaran', 'Pengaturan metode pembayaran akan ditampilkan di sini.');
+                        break;
+                    case 'delete-account':
+                        showModal('Hapus Akun', 'Apakah Anda yakin ingin menghapus akun Anda? Tindakan ini tidak dapat dibatalkan.');
+                        break;
+                }
+            }
+
+            function showModal(title, content) {
+                modalTitle.textContent = title;
+                modalBody.innerHTML = content;
+                modal.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
+
+-->
